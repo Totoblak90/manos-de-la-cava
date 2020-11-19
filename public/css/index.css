@@ -1,0 +1,82 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;}
+
+/*GENERAL*/
+.encabezado-2-navbar-secciones li a {
+    background-color: rgb(145, 39, 145);
+    text-decoration: none;
+    color: white;
+    padding:10px 15px;
+    display: block;
+}
+.encabezado-2-navbar-secciones li a:hover {
+    background-color: gray;
+}
+/*END GENERAL*/
+
+/*HEADER*/
+.encabezado-1 {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.encabezado-1-logo {
+    max-width: 150px;
+    align-self: center;
+}
+.encabezado-1-titulo {
+    color: gray;
+    align-self: center;
+    text-transform: uppercase;
+}
+.encabezado-1-subtitulo {
+    color: lightgray;
+    border-bottom: 1px dotted lightgray;
+    width: 80%;
+    align-self: center;
+    text-align: center;
+}
+.encabezado-1-subtitulo i {
+    color: rgb(145, 39, 145);
+}
+.encabezado-2-navbar {
+    position:fixed;
+    width: 100%;
+    padding: 15px 0px;
+}
+.encabezado-2-navbar-secciones {
+    display: flex;
+    list-style: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    background-color: rgb(145, 39, 145);
+    justify-content: space-around;
+    padding: 0px 6%;
+}
+.encabezado-2-navbar-secciones-bienvenido {
+    align-self: center;
+}
+.encabezado-2-navbar-secciones-nosotros {
+    align-self: center;
+}
+.encabezado-2-navbar-secciones-programas {
+    align-self: center;
+}
+.encabezado-2-navbar-secciones-programas-submenu {
+    list-style: none;
+    position: absolute;
+    display: none;
+}
+.encabezado-2-navbar-secciones-programas:hover > ul {
+    display: block;
+}
+.encabezado-2-navbar-secciones-donar {
+    align-self: center;
+}
+.encabezado-2-navbar-secciones-contacto {
+    align-self: center;
+}
+/*END HEADER*/
