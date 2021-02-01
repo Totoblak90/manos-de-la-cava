@@ -15,7 +15,8 @@ Gente con capacidad de donar.
 - Fundación conciencia (https://conciencia.org/)
 
 ★ Trello:
-○ Tablero del proyecto integrador
+
+○ Tablero del proyecto integrador (https://trello.com/b/PkUMH6Xy/p%C3%A1gina-web-manos)
 
 ★ Wireframe de las siguientes páginas (todos en su versión desktop-tablet-mobile)
 
