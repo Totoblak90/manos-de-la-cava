@@ -24,9 +24,9 @@ https://wireframe.cc/
 
 ○ Bienvenido
 
-  ○ https://wireframe.cc/wqCx32
-  ○
-  ○
+  ○ https://wireframe.cc/wqCx32 - Desktop
+  ○ https://wireframe.cc/BweX44 - Tablet
+  ○ https://wireframe.cc/WzRjSk - Mobile
 
 ○ Quienes Somos
 
