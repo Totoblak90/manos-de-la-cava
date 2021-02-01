@@ -2,39 +2,41 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Montserrat', sans-serif;}
+    font-family: 'Montserrat', sans-serif;
+}
 
 /*GENERAL*/
 .encabezado-2-navbar-secciones li a {
     background-color: rgb(145, 39, 145);
     text-decoration: none;
     color: white;
-    padding:10px 15px;
+    padding: 10px 15px;
     display: block;
+    font-weight: bold;
 }
 .encabezado-2-navbar-secciones li a:hover {
     background-color: gray;
 }
+
 /*END GENERAL*/
 
 /*HEADER*/
+.encabezado {
+    top: 0;
+    width: 100%;
+    display: fixed;
+}
 .encabezado-1 {
     margin-bottom: 20px;
     display: flex;
     flex-direction: column;
 }
 .encabezado-1-logo {
-    max-width: 150px;
+    width: 20%;
     align-self: center;
-}
-.encabezado-1-titulo {
-    color: gray;
-    align-self: center;
-    text-transform: uppercase;
 }
 .encabezado-1-subtitulo {
-    color: lightgray;
-    border-bottom: 1px dotted lightgray;
+    color: gray;
     width: 80%;
     align-self: center;
     text-align: center;
@@ -43,7 +45,6 @@
     color: rgb(145, 39, 145);
 }
 .encabezado-2-navbar {
-    position:fixed;
     width: 100%;
     padding: 15px 0px;
 }
@@ -69,6 +70,7 @@
     list-style: none;
     position: absolute;
     display: none;
+    z-index: 1;
 }
 .encabezado-2-navbar-secciones-programas:hover > ul {
     display: block;
@@ -80,3 +82,64 @@
     align-self: center;
 }
 /*END HEADER*/
+
+/*MAIN*/
+/*DISEÑO NARANJA*/
+.disenoNaranja {
+    background-color: rgb(255, 165, 0);
+    width: 80%;
+    padding: 3%;
+    margin: 0 auto;
+    color: white;
+    text-align: center;
+}
+.disenoNaranja h2 {
+    margin-bottom: 2%;
+    font-weight: 700;
+    font-style: italic;
+}
+.disenoNaranja h3 {
+    font-weight: 100;
+}
+/*END DISEÑO NARANJA*/
+
+/*SLIDER*/
+
+.containerSlider {
+    width: 80%;
+    margin: 5% auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.slider, 
+.sliderButtons {
+    list-style: none;
+    width: 100%;
+}
+.slider img {
+    width: 100%;
+    position: absolute;
+}
+.sliderButtons {
+    display: flex;
+    justify-content: center;
+    align-self: flex-end;
+    position: absolute;
+    top: 100%;
+}
+.sliderButtons li{
+    z-index: 1;
+    background-color: rgb(145, 39, 145);
+    border-radius: 3px;
+    width: fit-content;
+    padding: 3px;
+    margin: 0% 1%;
+}
+.sliderButtons li a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+/*END SLIDER*/
+
+
