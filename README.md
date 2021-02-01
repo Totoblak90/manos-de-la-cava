@@ -22,85 +22,85 @@ Gente con capacidad de donar.
 
 https://wireframe.cc/
 
-○ Home (/)
+○ Bienvenido
 
   ○
   ○
   ○
 
-○ Quienes Somos (/nosotros)
+○ Quienes Somos
 
   ○
   ○
   ○
 
-○ Nuestros programas (/nuestros-programas)
+○ Nuestros programas
 
   ○
   ○
   ○
 
-      ○ Educación (/nuestros-programas/educación)
+      ○ Educación
       
       ○
       ○
       ○
       
-      ○ Primera Infancia (/nuestros-programas/primera-infancia)
+      ○ Primera Infancia
       
       ○
       ○
       ○
       
-      ○ Gestión del tiempo libre (/nuestros-programas/gestión-del-tiempo-libre)
+      ○ Gestión del tiempo libre
       
       ○
       ○
       ○
       
-      ○ Deportes (/nuestros-programas/deportes)
+      ○ Deportes
       
       ○
       ○
       ○
       
-      ○ Acceso a la salud (/nuestros-programas/acceso-a-la-salud)
+      ○ Acceso a la salud
       
       ○
       ○
       ○
       
-      ○ Adultos (/nuestros-programas/adultos)
+      ○ Adultos
       
       ○
       ○
       ○
       
-      ○ Intervenciones Interdisciplinarias (/nuestros-programas/intervenciones-interdisciplinarias)
+      ○ Intervenciones Interdisciplinarias
       
       ○
       ○
       ○
 
-○ Donar (/donar)
+○ Donar
 
 ○
 ○
 ○
 
-○ Formulario de registro (/users/registro)
+○ Formulario de registro
 
 ○
 ○
 ○
 
-○ Formulario de login (/users/login)
+○ Formulario de login
 
 ○
 ○
 ○
 
-○ Perfil de usuario (/users/profile)
+○ Perfil de usuario
 
 ○
 ○
