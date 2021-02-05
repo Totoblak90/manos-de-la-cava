@@ -6,17 +6,7 @@
 }
 
 /*GENERAL*/
-.encabezado-2-navbar-secciones li a {
-    background-color: rgb(145, 39, 145);
-    text-decoration: none;
-    color: white;
-    padding: 10px 15px;
-    display: block;
-    font-weight: bold;
-}
-.encabezado-2-navbar-secciones li a:hover {
-    background-color: gray;
-}
+
 
 /*END GENERAL*/
 
@@ -24,46 +14,40 @@
 .encabezado {
     top: 0;
     width: 100%;
-    display: fixed;
 }
-.encabezado-1 {
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
+.linkLogo {
+    width: 10%;
+    margin: 1% 0%;
 }
 .encabezado-1-logo {
-    width: 20%;
-    align-self: center;
-}
-.encabezado-1-subtitulo {
-    color: gray;
-    width: 80%;
-    align-self: center;
-    text-align: center;
-}
-.encabezado-1-subtitulo i {
-    color: rgb(145, 39, 145);
+    width: 100%;
 }
 .encabezado-2-navbar {
     width: 100%;
     padding: 15px 0px;
+    display: fixed;
 }
 .encabezado-2-navbar-secciones {
     display: flex;
     list-style: none;
     text-transform: uppercase;
     font-weight: 800;
-    background-color: rgb(145, 39, 145);
+    background-color: rgb(153, 153, 153);
     justify-content: space-around;
     padding: 0px 6%;
 }
-.encabezado-2-navbar-secciones-bienvenido {
-    align-self: center;
+.encabezado-2-navbar-secciones li a {
+    background-color: rgb(153, 153, 153);
+    text-decoration: none;
+    color: rgb(145, 39, 145);
+    padding: 10px 15px;
+    display: block;
+    font-weight: bold;
 }
-.encabezado-2-navbar-secciones-nosotros {
-    align-self: center;
+.encabezado-2-navbar-secciones li a:hover {
+    text-decoration: underline;
 }
-.encabezado-2-navbar-secciones-programas {
+.encabezado-2-navbar-secciones-bienvenido, .encabezado-2-navbar-secciones-contacto, .encabezado-2-navbar-secciones-nosotros, .encabezado-2-navbar-secciones-programas, .encabezado-2-navbar-secciones-donar, .encabezado-2-navbar-secciones-resultados {
     align-self: center;
 }
 .encabezado-2-navbar-secciones-programas-submenu {
@@ -75,71 +59,65 @@
 .encabezado-2-navbar-secciones-programas:hover > ul {
     display: block;
 }
-.encabezado-2-navbar-secciones-donar {
-    align-self: center;
-}
-.encabezado-2-navbar-secciones-contacto {
-    align-self: center;
-}
+
 /*END HEADER*/
 
-/*MAIN*/
-/*DISEÑO NARANJA*/
-.disenoNaranja {
-    background-color: rgb(255, 165, 0);
-    width: 80%;
-    padding: 3%;
-    margin: 0 auto;
-    color: white;
-    text-align: center;
-}
-.disenoNaranja h2 {
-    margin-bottom: 2%;
-    font-weight: 700;
-    font-style: italic;
-}
-.disenoNaranja h3 {
-    font-weight: 100;
-}
-/*END DISEÑO NARANJA*/
+/* BIENVENIDO*/
 
-/*SLIDER*/
+/* END BIENVENIDO */
 
-.containerSlider {
-    width: 80%;
-    margin: 5% auto;
+/* FOOTER */
+
+/* edito la estructura del footer */
+footer {
     display: flex;
     flex-wrap: wrap;
-}
-.slider, 
-.sliderButtons {
-    list-style: none;
-    width: 100%;
-}
-.slider img {
-    width: 100%;
-    position: absolute;
-}
-.sliderButtons {
-    display: flex;
-    justify-content: center;
-    align-self: flex-end;
-    position: absolute;
-    top: 100%;
-}
-.sliderButtons li{
-    z-index: 1;
+    justify-content: space-around;
     background-color: rgb(145, 39, 145);
-    border-radius: 3px;
-    width: fit-content;
-    padding: 3px;
-    margin: 0% 1%;
 }
-.sliderButtons li a {
-    text-decoration: none;
+article {
+    width: 20%;
+    margin-top: 2.5%;
+}
+footer div img {
+    vertical-align: middle;
+}
+
+/* edito los articulos dentro del footer */
+footer article h3 {
+    text-align: center;
     color: white;
-    font-family: 'Montserrat', sans-serif;
 }
-/*END SLIDER*/
+footer article p {
+    color: white;
+    margin: 5% auto;
+    padding: 3%;
+}
+footer article p a {
+    color: rgb(153, 153, 153);
+}
+.newsletterDiv {
+    margin: 5% auto;
+}
+.newsletterDiv label {
+    color: white;
+}
+footer form input {
+    outline: none;
+    border-radius: 3px;
+    border: none;
+    padding: 2px;
+}
+footer form button {
+    outline: none;
+    border-radius: 3px;
+    border: none;
+    padding: 2px;
+    background-color: rgb(153, 153, 153);
+    cursor: pointer;
+}
+/*END FOOTER*/
+
+
 
 
