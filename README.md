@@ -32,7 +32,7 @@ https://wireframe.cc/
 
   ○ https://wireframe.cc/kaXAaz - Desktop
   ○ https://wireframe.cc/kaXAaz - Tablet
-  ○ 
+  ○ https://wireframe.cc/dXXEuI - Mobile
 
 ○ Nuestros programas
 
