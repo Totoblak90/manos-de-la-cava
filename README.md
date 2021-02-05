@@ -30,9 +30,9 @@ https://wireframe.cc/
 
 ○ Quienes Somos
 
-  ○
-  ○
-  ○
+  ○ https://wireframe.cc/kaXAaz - Desktop
+  ○ https://wireframe.cc/kaXAaz - Tablet
+  ○ 
 
 ○ Nuestros programas
 
