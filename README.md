@@ -1,134 +1,59 @@
-Manos de La Cava
+# ManosDeLaCava
 
-● Descripción
-Es un sitio que muestra el trabajo que realiza la ONG. Busca mostrar información de los trabajos más importantes y al mismo tiempo que se pueda ver que la página tenga vida, es decir, que muestre constantemente información nueva y actualizada para que quien entre y no conozca la ONG pueda ver que el trabajo es presente.
-También es importante que se capten donantes nuevos con la página.
+This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.7.
 
-● Público al que apunta:
-Gente con capacidad de donar.
+## Development server
 
-● Sitios de referencia:
-- Festejo Solidario (https://festejosolidario.org/)
+To start a local development server, run:
 
-- Fundación espartanos (https://www.fundacionespartanos.org/)
+```bash
+ng serve
+```
 
-- Fundación conciencia (https://conciencia.org/)
+Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-★ Trello:
+## Code scaffolding
 
-○ Tablero del proyecto integrador (https://trello.com/b/PkUMH6Xy/p%C3%A1gina-web-manos)
+Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
 
-★ Wireframe de las siguientes páginas (todos en su versión desktop-tablet-mobile)
+```bash
+ng generate component component-name
+```
 
-https://wireframe.cc/
+For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
 
-○ Bienvenido
+```bash
+ng generate --help
+```
 
-  ○ https://wireframe.cc/wqCx32 - Desktop
-  ○ https://wireframe.cc/BweX44 - Tablet
-  ○ https://wireframe.cc/WzRjSk - Mobile
+## Building
 
-○ Quienes Somos
+To build the project run:
 
-  ○ https://wireframe.cc/kaXAaz - Desktop
-  ○ https://wireframe.cc/kaXAaz - Tablet
-  ○ https://wireframe.cc/dXXEuI - Mobile
+```bash
+ng build
+```
 
-○ Nuestros programas
+This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
-  ○
-  ○
-  ○
+## Running unit tests
 
-      ○ Educación
-      
-      ○
-      ○
-      ○
-      
-      ○ Primera Infancia
-      
-      ○
-      ○
-      ○
-      
-      ○ Gestión del tiempo libre
-      
-      ○
-      ○
-      ○
-      
-      ○ Deportes
-      
-      ○
-      ○
-      ○
-      
-      ○ Acceso a la salud
-      
-      ○
-      ○
-      ○
-      
-      ○ Adultos
-      
-      ○
-      ○
-      ○
-      
-      ○ Intervenciones Interdisciplinarias
-      
-      ○
-      ○
-      ○
+To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
 
-○ Donar
+```bash
+ng test
+```
 
-○
-○
-○
+## Running end-to-end tests
 
-○ Formulario de registro
+For end-to-end (e2e) testing, run:
 
-○
-○
-○
+```bash
+ng e2e
+```
 
-○ Formulario de login
+Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
 
-○
-○
-○
+## Additional Resources
 
-○ Perfil de usuario
-
-○
-○
-○
-
-★ Secciones de la página:
-
-○ Home (/)
-
-○ Quienes Somos (/nosotros)
-
-○ Nuestros programas (/nuestros-programas)
-
-      ○ Educación (/nuestros-programas/educación)
-      ○ Primera Infancia (/nuestros-programas/primera-infancia)
-      ○ Gestión del tiempo libre (/nuestros-programas/gestión-del-tiempo-libre)
-      ○ Deportes (/nuestros-programas/deportes)
-      ○ Acceso a la salud (/nuestros-programas/acceso-a-la-salud)
-      ○ Adultos (/nuestros-programas/adultos)
-      ○ Intervenciones Interdisciplinarias (/nuestros-programas/intervenciones-interdisciplinarias)
-
-○ Donar (/donar)
-
-○ Formulario de registro (/users/registro)
-
-○ Formulario de login (/users/login)
-
-○ Perfil de usuario (/users/profile)
-
-★ Código de administrador:
-○ 
+For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
