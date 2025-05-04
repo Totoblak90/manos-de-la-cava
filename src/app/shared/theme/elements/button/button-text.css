@@ -1,0 +1,42 @@
+button.text,
+a.text {
+	cursor: pointer;
+	font-size: 1rem;
+	text-decoration: none;
+	padding: 10px;
+	background-color: transparent;
+	border: none;
+	font-weight: bold;
+	color: var(--primary-color);
+	transition:
+		background-color,
+		opacity 300ms ease-in-out;
+	position: relative;
+}
+
+button.text::before,
+a.text::before {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 0;
+	height: 2px;
+	background-color: var(--primary-color);
+	transition: width 300ms ease-in-out;
+}
+
+button.text:hover::before,
+a.text:hover::before {
+	width: 100%;
+}
+
+button.text:active,
+a.text:active {
+	color: var(--primary-dark-color);
+}
+
+button.text:disabled,
+a.text:disabled {
+	opacity: 0.8;
+}

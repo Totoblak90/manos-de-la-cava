@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+/* App-specific variables. */
+@import "./app/shared/theme/variables.css";
+
+/* Element-specific styles. */
+@import "./app/shared/theme/elements/index.css";
+
+/* Global styles. */
+@import "./app/shared/theme/global.css";

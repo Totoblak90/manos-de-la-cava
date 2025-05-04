@@ -1,0 +1,13 @@
+a.link-icon.mdc-fab.mat-mdc-fab-base.mdc-fab--mini.mat-mdc-mini-fab.mat-accent.mat-mdc-button-base {
+	background-color: transparent;
+	box-shadow: none;
+	color: var(--icon-color);
+	width: min-content;
+	height: min-content;
+}
+
+
+a.link-icon.mat-mdc-mini-fab span.mat-mdc-button-touch-target {
+	width: min-content;
+	height: min-content;
+}

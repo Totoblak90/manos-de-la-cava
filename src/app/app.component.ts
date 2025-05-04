@@ -1,11 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 
+import { HeaderComponent } from './shared/components/header/header.component';
+import { IconRegistryService } from './shared/services/icon-registry.service';
 @Component({
-  selector: 'app-root',
-  imports: [],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+	selector: 'app-root',
+	imports: [HeaderComponent],
+	templateUrl: './app.component.html',
+	styleUrl: './app.component.css',
+	providers: [IconRegistryService],
 })
 export class AppComponent {
-  title = 'manos-de-la-cava';
+	private readonly iconRegistryService = inject(IconRegistryService);
+
+	constructor() {
+		this.iconRegistryService.registerIcons();
+	}
 }
