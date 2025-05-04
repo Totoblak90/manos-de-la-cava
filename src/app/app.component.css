@@ -10,6 +10,13 @@
 	width: 100%;
 }
 
-router-outlet {
+main {
 	flex-grow: 1;
+	padding: 10px;
+}
+
+@media screen and (min-width: 768px) {
+	main {
+		padding: 10px 75px;
+	}
 }

@@ -74,6 +74,10 @@
 }
 
 @media screen and (min-width: 768px) {
+	:host {
+		padding: 50px 25px;
+	}
+
 	.logo-container button {
 		--container-size: 125px;
 
