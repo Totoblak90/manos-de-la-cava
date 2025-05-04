@@ -1,0 +1,59 @@
+:host {
+	--image-viewer-h: 65px;
+	--image-viewer-w: 95px;
+	--spacing-m: 24px;
+	--spacing-s: 12px;
+	--spacing-xs: 4px;
+
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-s);
+	margin: var(--spacing-m) 0;
+}
+
+.top-images-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--spacing-s);
+}
+
+.bottom-images-container {
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	gap: var(--spacing-s);
+	height: calc(var(--image-viewer-h) + var(--spacing-s));
+}
+
+.bottom-images-container > .image-viewer:nth-child(2) {
+	align-self: flex-end;
+}
+
+.content-container {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-xs);
+}
+
+h1 {
+	text-align: var(--hero-text-align, center);
+}
+
+.donate-button {
+	align-self: center;
+}
+
+.image-viewer {
+	--image-viewer-width: var(--image-viewer-w);
+	--image-viewer-height: var(--image-viewer-h);
+	--image-viewer-radius: 16px;
+}
+
+
+@media	screen and (min-width: 425px) {
+	:host {
+		--image-viewer-h: 100px;
+		--image-viewer-w: 140px;
+	}
+}

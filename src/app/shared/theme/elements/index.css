@@ -1,6 +1,4 @@
 /* Barrel file for element's styles related to this app. */
-@import "./heading.css";
-
 @import "./list.css";
 
 @import "./image.css";

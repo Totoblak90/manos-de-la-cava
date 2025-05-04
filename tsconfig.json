@@ -1,40 +1,36 @@
 /* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
-  "compileOnSave": false,
-  "compilerOptions": {
-    "isolatedModules": true,
-    "baseUrl": "./",
-    "paths": {
-      "@mdlc/shared/*": [
-        "src/app/shared/*"
-      ],
-    },
-    "esModuleInterop": true,
-    "outDir": "./dist/out-tsc",
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "noImplicitOverride": true,
-    "noPropertyAccessFromIndexSignature": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "sourceMap": true,
-    "declaration": false,
-    "experimentalDecorators": true,
-    "moduleResolution": "node",
-    "importHelpers": true,
-    "target": "ES2022",
-    "module": "es2020",
-    "lib": [
-      "es2022",
-      "dom"
-    ],
-    /* enables ECMAScript standard compliant behavior to support enable isolatedModules.*/
-    "useDefineForClassFields": true
-  },
-  "angularCompilerOptions": {
-    "enableI18nLegacyMessageIdFormat": false,
-    "strictInjectionParameters": true,
-    "strictInputAccessModifiers": true,
-    "strictTemplates": true
-  },
+	"compileOnSave": false,
+	"compilerOptions": {
+		"isolatedModules": true,
+		"baseUrl": "./",
+		"paths": {
+			"@mdlc/shared/*": ["src/app/shared/*"],
+			"@mdlc/features/*": ["src/app/features/*"]
+		},
+		"esModuleInterop": true,
+		"outDir": "./dist/out-tsc",
+		"forceConsistentCasingInFileNames": true,
+		"strict": true,
+		"noImplicitOverride": true,
+		"noPropertyAccessFromIndexSignature": true,
+		"noImplicitReturns": true,
+		"noFallthroughCasesInSwitch": true,
+		"sourceMap": true,
+		"declaration": false,
+		"experimentalDecorators": true,
+		"moduleResolution": "node",
+		"importHelpers": true,
+		"target": "ES2022",
+		"module": "es2020",
+		"lib": ["es2022", "dom"],
+		/* enables ECMAScript standard compliant behavior to support enable isolatedModules.*/
+		"useDefineForClassFields": true
+	},
+	"angularCompilerOptions": {
+		"enableI18nLegacyMessageIdFormat": false,
+		"strictInjectionParameters": true,
+		"strictInputAccessModifiers": true,
+		"strictTemplates": true
+	}
 }

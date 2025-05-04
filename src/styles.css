@@ -1,12 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+/* Fonts. */
+@import "./app/shared/theme/fonts/playfair-display.css";
+
 /* App-specific variables. */
 @import "./app/shared/theme/variables.css";
+
+/* Global styles. */
+@import "./app/shared/theme/global.css";
+
+/* Typography. */
+@import "./app/shared/theme/typography/index.css";
 
 /* Element-specific styles. */
 @import "./app/shared/theme/elements/index.css";
 
 /* Global animations. */
 @import "./app/shared/theme/animations.css";
-
-/* Global styles. */
-@import "./app/shared/theme/global.css";

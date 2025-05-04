@@ -1,0 +1,15 @@
+:host {
+	display: block;
+	overflow: hidden;
+	border-radius: var(--image-viewer-radius, 8px);
+	width: var(--image-viewer-width, 100px);
+	height: var(--image-viewer-height, 100px);
+}
+
+img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: top;
+	border-radius: var(--image-viewer-radius, 8px);
+}

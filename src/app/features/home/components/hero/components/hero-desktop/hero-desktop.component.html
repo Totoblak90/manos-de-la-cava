@@ -1,0 +1,30 @@
+<section class="left-section">
+	<h1>Acompañamos, contenemos y abrimos caminos.</h1>
+	<a
+		class="primary donate-button"
+		routerLink="donar"
+	>
+		Donar
+	</a>
+</section>
+<section class="right-section">
+	<article class="column">
+		@for (image of leftColumnImages; track $index) {
+			<mdlc-image-viewer
+				class="image-viewer"
+				[imgUrl]="image.imgUrl"
+				[imgAlt]="image.imgAlt"
+			/>
+		}
+	</article>
+
+	<article class="column">
+		@for (image of rightColumnImages; track $index) {
+			<mdlc-image-viewer
+				class="image-viewer"
+				[imgUrl]="image.imgUrl"
+				[imgAlt]="image.imgAlt"
+			/>
+		}
+	</article>
+</section>
