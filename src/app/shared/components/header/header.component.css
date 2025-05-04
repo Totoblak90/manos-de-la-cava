@@ -53,10 +53,6 @@
 }
 
 @media screen and (min-width: 575px) {
-	.header-top {
-		display: none;
-	}
-
 	.header-bottom__center {
 		align-items: center;
 		justify-content: center;
@@ -68,6 +64,16 @@
 
 	.navbar-desktop {
 		display: block;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.logo {
+		max-width: 150px;
+	}
+
+	.header-top {
+		display: none;
 	}
 
 	.social-media-icons-mobile {

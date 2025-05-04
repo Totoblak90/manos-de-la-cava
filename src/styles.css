@@ -5,5 +5,8 @@
 /* Element-specific styles. */
 @import "./app/shared/theme/elements/index.css";
 
+/* Global animations. */
+@import "./app/shared/theme/animations.css";
+
 /* Global styles. */
 @import "./app/shared/theme/global.css";
