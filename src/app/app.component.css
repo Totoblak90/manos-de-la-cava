@@ -1,0 +1,15 @@
+:host {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	min-height: 100vh;
+}
+
+:host > * {
+	width: 100%;
+}
+
+router-outlet {
+	flex-grow: 1;
+}

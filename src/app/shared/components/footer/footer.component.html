@@ -1,0 +1,31 @@
+<footer class="footer">
+	<section class="footer-top">
+		<article class="logo-container">
+			<button mat-fab>
+				<img
+					class="logo"
+					src="assets/logo.webp"
+					alt="Logo Manos de La Cava"
+				/>
+			</button>
+		</article>
+
+		<article class="institutional-info-container">
+			<p>
+				<span>{{ address.streetName }} {{ address.number }}, {{ address.city }}. CP: {{ address.postalCode }} -</span>
+				<a
+					class="email"
+					href="mailto:administracion@manosdelacava.org"
+				>
+					{{ email }}
+				</a>
+			</p>
+		</article>
+
+		<mdlc-social-media-icons class="social-media-icons-desktop" />
+	</section>
+
+	<section class="footer-bottom">
+		<mdlc-social-media-icons class="social-media-icons-mobile" />
+	</section>
+</footer>

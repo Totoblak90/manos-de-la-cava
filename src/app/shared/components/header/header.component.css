@@ -52,6 +52,12 @@
 	display: none;
 }
 
+.social-media-icons-mobile,
+.social-media-icons-desktop {
+	--fab-container-color: transparent;
+	--fab-icon-color: black;
+}
+
 @media screen and (min-width: 575px) {
 	.header-bottom__center {
 		align-items: center;

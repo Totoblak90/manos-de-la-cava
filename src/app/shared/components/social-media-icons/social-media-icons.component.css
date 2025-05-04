@@ -1,0 +1,17 @@
+:host {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+a.social-media-icon {
+	--mdc-fab-small-container-color: var(--fab-container-color, var(--primary-color));
+	--mdc-circular-progress-active-indicator-color: var(--fab-container-color, var(--primary-color));
+	--mat-slider-ripple-color: var(--fab-container-color, var(--primary-color));
+	color: var(--fab-icon-color, var(--icon-color));
+	box-shadow: none;
+}
+
+a.social-media-icon:active {
+	box-shadow: none;
+}
