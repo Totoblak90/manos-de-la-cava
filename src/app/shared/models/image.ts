@@ -1,4 +1,4 @@
-export type ImageViewer = {
+export type Image = {
 	/** Image URL. */
 	readonly imgUrl: string;
 

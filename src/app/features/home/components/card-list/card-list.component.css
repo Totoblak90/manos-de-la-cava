@@ -1,0 +1,42 @@
+:host {
+	display: block;
+}
+
+h2 {
+	margin-bottom: var(--spacing-m);
+}
+
+.card-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(205px, 1fr));
+	gap: 20px;
+}
+
+.card-list .program-card:nth-child(1) {
+	background-color: var(--tertiary-color);
+}
+.card-list .program-card:nth-child(2) {
+	background-color: var(--quaternary-color);
+}
+.card-list .program-card:nth-child(3) {
+	background-color: var(--quinary-color);
+}
+.card-list .program-card:nth-child(4) {
+	background-color: var(--senary-color);
+}
+.card-list .program-card:nth-child(5) {
+	background-color: var(--tertiary-color);
+}
+.card-list .program-card:nth-child(6) {
+	background-color: var(--quaternary-color);
+}
+.card-list .program-card:nth-child(7) {
+	background-color: var(--quinary-color);
+}
+
+
+@media screen and (min-width: 576px) {
+	.card-list {
+		grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+	}
+}

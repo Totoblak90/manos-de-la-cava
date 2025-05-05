@@ -1,0 +1,22 @@
+<section class="card-image-section">
+	<img
+		class="card-image-section__image"
+		[src]="imageParams().imgUrl"
+		[alt]="imageParams().imgAlt"
+	/>
+</section>
+
+<section class="card-info-section">
+	<h3>{{ title() }}</h3>
+
+	<div class="card-info-section__description">
+		<p>{{ description() }}</p>
+	</div>
+
+	<a
+		class="secondary see-more-button"
+		[routerLink]="linkHref()"
+	>
+		Ver más
+	</a>
+</section>

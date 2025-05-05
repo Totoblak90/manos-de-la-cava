@@ -1,0 +1,15 @@
+<section class="programs">
+	<h2>Áreas</h2>
+
+	<article class="card-list">
+		@for (card of cards; track $index) {
+			<mdlc-base-card
+				class="program-card"
+				[title]="card.title"
+				[description]="card.description"
+				[imageParams]="card.imageParams"
+				[linkHref]="card.linkHref"
+			/>
+		}
+	</article>
+</section>

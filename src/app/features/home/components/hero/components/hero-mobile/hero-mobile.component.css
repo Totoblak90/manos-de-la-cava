@@ -1,14 +1,10 @@
 :host {
 	--image-viewer-h: 65px;
 	--image-viewer-w: 95px;
-	--spacing-m: 24px;
-	--spacing-s: 12px;
-	--spacing-xs: 4px;
 
 	display: flex;
 	flex-direction: column;
 	gap: var(--spacing-s);
-	margin: var(--spacing-m) 0;
 }
 
 .top-images-container {
@@ -50,8 +46,7 @@ h1 {
 	--image-viewer-radius: 16px;
 }
 
-
-@media	screen and (min-width: 425px) {
+@media screen and (min-width: 425px) {
 	:host {
 		--image-viewer-h: 100px;
 		--image-viewer-w: 140px;

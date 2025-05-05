@@ -1,0 +1,15 @@
+button.secondary,
+a.secondary {
+	background-color: var(--secondary-color);
+	color: var(--text-color);
+}
+
+button.secondary:hover,
+a.secondary:hover {
+	background-color: var(--secondary-light-color);
+}
+
+button.secondary:active,
+a.secondary:active {
+	background-color: var(--secondary-dark-color);
+}

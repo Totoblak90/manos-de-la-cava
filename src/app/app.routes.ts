@@ -10,6 +10,7 @@ export const routes: Routes = [
 	{
 		path: commonRoutePaths.programs.path,
 		loadComponent: () => import('./features/programs/programs.component').then((c) => c.ProgramsComponent),
+		loadChildren: () => import('./features/programs/programs.routes').then((m) => m.programsRoutes),
 	},
 	{
 		path: commonRoutePaths.aboutUs.path,

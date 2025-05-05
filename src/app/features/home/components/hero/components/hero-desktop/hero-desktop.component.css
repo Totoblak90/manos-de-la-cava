@@ -1,8 +1,6 @@
 :host {
 	--image-viewer-h: 100px;
 	--image-viewer-w: 100%;
-	--spacing-s: 12px;
-	--spacing-m: 24px;
 
 	display: flex;
 	gap: var(--spacing-m);

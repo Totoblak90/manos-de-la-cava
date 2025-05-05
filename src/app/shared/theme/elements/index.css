@@ -1,11 +1,13 @@
 /* Barrel file for element's styles related to this app. */
 @import "./list.css";
 
+/* Image. */
 @import "./image.css";
 
+/* Input.	*/
 @import "./input.css";
 
-@import "./button/button-primary.css";
-@import "./button/button-text.css";
+/* Button. */
+@import "./button/index.css";
 
 @import "./loader.css";
