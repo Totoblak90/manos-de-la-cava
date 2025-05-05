@@ -1,5 +1,9 @@
-button,
-a {
+button.primary,
+a.primary,
+button.secondary,
+a.secondary,
+button.text:disabled,
+a.text:disabled {
 	font-family: "Montserrat", sans-serif;
 	cursor: pointer;
 	font-size: 1rem;
@@ -12,7 +16,11 @@ a {
 		opacity 300ms ease-in-out;
 }
 
-button:disabled,
-a:disabled {
+button.primary:disabled,
+a.primary:disabled,
+button.secondary:disabled,
+a.secondary:disabled,
+button.text:disabled,
+a.text:disabled {
 	opacity: 0.8;
 }

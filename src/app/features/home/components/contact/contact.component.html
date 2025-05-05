@@ -1,0 +1,61 @@
+<h2>Contacto</h2>
+
+<section class="contact-info">
+	<p>
+		<span>
+			<mat-icon>email</mat-icon>
+			:
+		</span>
+		<a [href]="'mailto:' + email">{{ email }}</a>
+	</p>
+
+	<p>
+		<span>
+			<mat-icon>whatsapp</mat-icon>
+			:
+		</span>
+		<a
+			[href]="whatsappUrl"
+			target="_blank"
+			rel="noopener noreferrer"
+		>
+			{{ phone }}
+		</a>
+	</p>
+
+	<p>
+		<span>
+			<mat-icon>home</mat-icon>
+			:
+		</span>
+		<span>{{ prettifiedAddress }}</span>
+	</p>
+
+	<p>
+		<span>
+			<mat-icon>instagram</mat-icon>
+			:
+		</span>
+
+		<a
+			[href]="instagramUrl"
+			target="_blank"
+		>
+			{{ "@manosdelacava" }}
+		</a>
+	</p>
+
+	<p>
+		<span>
+			<mat-icon>facebook</mat-icon>
+			:
+		</span>
+
+		<a
+			[href]="facebookUrl"
+			target="_blank"
+		>
+			/ManosDeLaCava
+		</a>
+	</p>
+</section>

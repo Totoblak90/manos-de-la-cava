@@ -11,13 +11,17 @@ type RegisterIcon = {
 	readonly path: string;
 };
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class IconRegistryService {
 	private readonly matIconRegistry = inject(MatIconRegistry);
 
 	private readonly domSanitizer = inject(DomSanitizer);
 
 	private readonly icons: readonly RegisterIcon[] = [
+		{
+			name: 'whatsapp',
+			path: 'assets/icons/logo-whatsapp.svg',
+		},
 		{
 			name: 'facebook',
 			path: 'assets/icons/logo-facebook.svg',
@@ -34,8 +38,10 @@ export class IconRegistryService {
 
 	/** Register icons. */
 	public registerIcons(): void {
-		this.icons.forEach((icon) =>
-			this.matIconRegistry.addSvgIcon(icon.name, this.domSanitizer.bypassSecurityTrustResourceUrl(icon.path)),
-		);
+		this.icons.forEach(({ name, path }) => this.registerIcon(name, path));
+	}
+
+	private registerIcon(name: string, path: string): void {
+		this.matIconRegistry.addSvgIcon(name, this.domSanitizer.bypassSecurityTrustResourceUrl(path));
 	}
 }
