@@ -1,0 +1,38 @@
+:host {
+	display: block;
+}
+
+h2 {
+	margin-bottom: var(--spacing-m);
+}
+
+mdlc-slider .swiper-slide {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	min-height: 80px;
+	overflow: hidden;
+	padding: 5px;
+	box-sizing: border-box;
+}
+
+mdlc-slider .swiper-slide img {
+	display: block;
+	max-width: 90%;
+	max-height: 90%;
+	height: auto;
+	width: auto;
+	object-fit: contain;
+	opacity: 0.85;
+	transition: opacity 0.3s ease;
+	margin: auto;
+}
+
+mdlc-slider .swiper-slide:hover img {
+	opacity: 1;
+}
+
+mdlc-slider {
+	--swiper-navigation-sides-offset: 10px;
+}

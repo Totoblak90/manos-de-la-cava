@@ -1,0 +1,17 @@
+<h2>Nos Acompañan</h2>
+
+<mdlc-slider [swiperConfig]="sponsorSliderConfig">
+	@for (sponsor of sponsors; track $index) {
+		<div [class.swiper-slide]="true">
+			<img
+				[src]="sponsor.imgUrl"
+				[alt]="sponsor.imgAlt"
+				loading="lazy"
+			/>
+		</div>
+	} @empty {
+		<div class="swiper-slide">
+			<span>Próximamente Sponsors</span>
+		</div>
+	}
+</mdlc-slider>

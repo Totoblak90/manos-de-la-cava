@@ -11,3 +11,6 @@
 @import "./button/index.css";
 
 @import "./loader.css";
+
+/* Slider. */
+@import "./slider.css";
