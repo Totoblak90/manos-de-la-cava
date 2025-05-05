@@ -2,8 +2,8 @@ button.primary,
 a.primary,
 button.secondary,
 a.secondary,
-button.text:disabled,
-a.text:disabled {
+button.text,
+a.text {
 	font-family: "Montserrat", sans-serif;
 	cursor: pointer;
 	font-size: 1rem;

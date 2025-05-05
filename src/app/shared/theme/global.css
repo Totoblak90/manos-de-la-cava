@@ -13,6 +13,7 @@ body {
 	margin: 0;
 
 	font-size: var(--font-size); /* 16px * 87.5% = 14px  */
+	scroll-behavior: smooth;
 }
 
 @media screen and (min-width: 768px) {
