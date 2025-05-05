@@ -1,14 +1,16 @@
+import { isPlatformBrowser } from '@angular/common';
 import {
 	AfterViewInit,
 	ChangeDetectionStrategy,
 	Component,
-	computed,
 	ElementRef,
 	input,
 	OnChanges,
 	OnDestroy,
 	SimpleChanges,
 	viewChild,
+	PLATFORM_ID,
+	inject,
 } from '@angular/core';
 
 import Swiper from 'swiper';
@@ -22,6 +24,8 @@ import { SwiperOptions } from 'swiper/types';
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SliderComponent implements AfterViewInit, OnDestroy, OnChanges {
+	private readonly platformId = inject(PLATFORM_ID);
+
 	/** Swiper configuration. */
 	public readonly swiperConfig = input<SwiperOptions>({});
 
@@ -32,35 +36,40 @@ export class SliderComponent implements AfterViewInit, OnDestroy, OnChanges {
 
 	/** @inheritdoc */
 	public ngAfterViewInit(): void {
-		if (this.swiperContainer().nativeElement && this.swiperConfig()) {
+		if (isPlatformBrowser(this.platformId) && this.swiperContainer().nativeElement && this.swiperConfig()) {
 			this.initializeSwiper();
 		}
 	}
 
 	/** @inheridoc */
 	public ngOnChanges(changes: SimpleChanges): void {
-		if (changes['swiperConfig'] && this.swiperInstance && !changes['swiperConfig'].firstChange) {
-			Object.assign(this.swiperInstance.params, this.swiperConfig());
-			this.swiperInstance.update();
-			this.swiperInstance.setBreakpoint();
+		if (isPlatformBrowser(this.platformId)) {
+			if (changes['swiperConfig'] && this.swiperInstance && !changes['swiperConfig'].firstChange) {
+				Object.assign(this.swiperInstance.params, this.swiperConfig());
+				this.swiperInstance.update();
+				this.swiperInstance.setBreakpoint();
 
-			if (this.swiperConfig().autoplay && this.swiperInstance.autoplay) {
-				this.swiperInstance.autoplay.stop();
-				this.swiperInstance.autoplay.start();
+				if (this.swiperConfig().autoplay && this.swiperInstance.autoplay) {
+					this.swiperInstance.autoplay.stop();
+					this.swiperInstance.autoplay.start();
+				}
+			} else if (
+				changes['swiperConfig'] &&
+				!this.swiperInstance &&
+				this.swiperContainer().nativeElement &&
+				!changes['swiperConfig'].firstChange
+			) {
+				this.initializeSwiper();
 			}
-		} else if (
-			changes['swiperConfig'] &&
-			!this.swiperInstance &&
-			this.swiperContainer().nativeElement &&
-			!changes['swiperConfig'].firstChange
-		) {
-			this.initializeSwiper();
 		}
 	}
 
 	/** @inheridoc */
 	public ngOnDestroy(): void {
-		this.swiperInstance?.destroy(true, true);
+		if (isPlatformBrowser(this.platformId)) {
+			this.swiperInstance?.destroy(true, true);
+			this.swiperInstance = undefined;
+		}
 	}
 
 	private initializeSwiper(): void {
