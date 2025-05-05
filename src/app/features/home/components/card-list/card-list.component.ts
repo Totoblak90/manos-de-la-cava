@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { BaseCardComponent } from '@mdlc/shared/components/cards/base-card/base-card.component';
-import { BaseCard } from '@mdlc/shared/models/base-card';
+import { BaseCard } from '@mdlc/shared/models/cards/base-card';
 import { commonRoutePaths } from '@mdlc/shared/utils/route-paths/common-route-paths';
 
 @Component({

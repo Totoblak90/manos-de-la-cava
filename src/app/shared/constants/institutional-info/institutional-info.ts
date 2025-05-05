@@ -19,13 +19,13 @@ export const NAME = 'Manos de la Cava';
 /** Phone number. */
 export const PHONE = '+54 9 11 3763-6690';
 
-/** INSTAGRAM URL. */
+/** Instagram URL. */
 export const INSTAGRAM = 'https://www.instagram.com/manosdelacava/?hl=es';
 
-/** FACEBOOK URL. */
+/** Facebook URL. */
 export const FACEBOOK = 'https://www.facebook.com/ManosDeLaCava/?locale=es_LA';
 
-/** YOUTUBE URL. */
+/** YouTube URL. */
 export const YOUTUBE = 'https://www.youtube.com/@manosdelacava6206';
 
 /** Social media urls. */
@@ -34,3 +34,4 @@ export const SOCIAL_MEDIA = {
 	facebook: FACEBOOK,
 	youtube: YOUTUBE,
 };
+

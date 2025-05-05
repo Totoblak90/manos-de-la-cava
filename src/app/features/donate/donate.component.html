@@ -1,1 +1,63 @@
-<p>donate works!</p>
+<mdlc-content-layout
+	class="layout-columns"
+	aria-labelledby="donar-main-title"
+>
+	<div class="content-block">
+		<header>
+			<h1
+				id="donar-main-title"
+				class="page-main-title"
+			>
+				Donar
+			</h1>
+		</header>
+		<p>Quiero Donar con tarjeta de crédito / débito</p>
+		<div class="donation-cards">
+			@for (card of donationCards; track card.title; let i = $index) {
+				<a
+					class="donation-card"
+					[routerLink]="card.route"
+				>
+					<mat-icon>{{ card.icon }}</mat-icon>
+					<span>{{ card.title }}</span>
+				</a>
+			}
+		</div>
+	</div>
+</mdlc-content-layout>
+
+<mdlc-content-layout
+	class="layout-columns"
+	aria-labelledby="mercadopago-title"
+>
+	<div class="content-block">
+		<mdlc-stripped-bordered-card
+			class="stripped-bordered-card"
+			[title]="mercadoPago.title"
+		>
+			<p>Alias</p>
+			<p>{{ mercadoPago.alias }}</p>
+			<p>CVU</p>
+			<p>{{ mercadoPago.cvu }}</p>
+		</mdlc-stripped-bordered-card>
+	</div>
+</mdlc-content-layout>
+
+<mdlc-content-layout
+	class="layout-columns"
+	aria-labelledby="transferencia-title"
+>
+	<div class="content-block">
+		<mdlc-stripped-bordered-card
+			class="stripped-bordered-card"
+			[title]="bankTransfer.title"
+		>
+			<p>Nombre de la cuenta: {{ bankTransfer.accountName }}</p>
+			<p>Banco: {{ bankTransfer.bankName }}</p>
+			<p>Alias: {{ bankTransfer.alias }}</p>
+			<p>Cuenta corriente bancaria: {{ bankTransfer.checkingsAccount }}</p>
+			<p>CBU: {{ bankTransfer.cbu }}</p>
+			<p>CUIT {{ bankTransfer.cuit }}</p>
+		</mdlc-stripped-bordered-card>
+	</div>
+</mdlc-content-layout>

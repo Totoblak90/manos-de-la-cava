@@ -1,3 +1,69 @@
 :host {
-  display: block;
+	display: block;
+}
+
+.donation-cards {
+	display: flex;
+	flex-wrap: wrap; /* Permite que las tarjetas se envuelvan en móvil */
+	gap: var(--spacing-s); /* Espacio entre tarjetas */
+	margin-top: var(--spacing-m);
+	justify-content: center; /* Centra las tarjetas en móvil */
+}
+
+.donation-card {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start; /* Alinea el icono a la izquierda */
+	gap: var(--spacing-s);
+	padding: var(--spacing-s);
+	border: 1px solid var(--primary-color); /* Borde suave */
+	border-radius: 8px;
+	text-decoration: none;
+	color: var(--text-color);
+	background-color: var(--primary-light-color, #f0f0f0);
+	width: 100%; /* Ocupa todo el ancho en móvil */
+	box-sizing: border-box; /* Considera el padding en el ancho */
+	transition: background-color 0.2s ease;
+}
+
+.donation-card:hover {
+	background-color: var(--primary-color);
+	color: white;
+}
+
+.donation-card mat-icon {
+	font-size: 24px;
+	color: var(--primary-color);
+	vertical-align: middle;
+}
+
+.donation-card span {
+	font-weight: 500;
+}
+
+@media (min-width: 768px) {
+	.donation-cards {
+		justify-content: space-between;
+	}
+	.donation-card {
+		width: calc(33.33% - var(--spacing-s));
+	}
+
+	.donation-card:nth-child(4n + 1) {
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+@media screen and (min-width: 992px) {
+	.stripped-bordered-card {
+		--stripped-bordered-card-width: 75%;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.stripped-bordered-card {
+		--stripped-bordered-card-width: 50%;
+	}
 }
