@@ -1,61 +1,61 @@
-<h2>Contacto</h2>
+<mdlc-stripped-bordered-card class="stripped-bordered-card" title="Contacto">
+	<section class="contact-info">
+		<p>
+			<span>
+				<mat-icon>email</mat-icon>
+				:
+			</span>
+			<a [href]="'mailto:' + email">{{ email }}</a>
+		</p>
 
-<section class="contact-info">
-	<p>
-		<span>
-			<mat-icon>email</mat-icon>
-			:
-		</span>
-		<a [href]="'mailto:' + email">{{ email }}</a>
-	</p>
+		<p>
+			<span>
+				<mat-icon svgIcon="whatsapp" />
+				:
+			</span>
+			<a
+				[href]="whatsappUrl"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				{{ phone }}
+			</a>
+		</p>
 
-	<p>
-		<span>
-			<mat-icon svgIcon="whatsapp" />
-			:
-		</span>
-		<a
-			[href]="whatsappUrl"
-			target="_blank"
-			rel="noopener noreferrer"
-		>
-			{{ phone }}
-		</a>
-	</p>
+		<p>
+			<span>
+				<mat-icon>home</mat-icon>
+				:
+			</span>
+			<span>{{ prettifiedAddress }}</span>
+		</p>
 
-	<p>
-		<span>
-			<mat-icon>home</mat-icon>
-			:
-		</span>
-		<span>{{ prettifiedAddress }}</span>
-	</p>
+		<p>
+			<span>
+				<mat-icon svgIcon="instagram" />
+				:
+			</span>
 
-	<p>
-		<span>
-			<mat-icon svgIcon="instagram" />
-			:
-		</span>
+			<a
+				[href]="instagramUrl"
+				target="_blank"
+			>
+				{{ "@manosdelacava" }}
+			</a>
+		</p>
 
-		<a
-			[href]="instagramUrl"
-			target="_blank"
-		>
-			{{ "@manosdelacava" }}
-		</a>
-	</p>
+		<p>
+			<span>
+				<mat-icon svgIcon="facebook" />
+				:
+			</span>
 
-	<p>
-		<span>
-			<mat-icon svgIcon="facebook" />
-			:
-		</span>
-
-		<a
-			[href]="facebookUrl"
-			target="_blank"
-		>
-			/ManosDeLaCava
-		</a>
-	</p>
-</section>
+			<a
+				[href]="facebookUrl"
+				target="_blank"
+			>
+				/ManosDeLaCava
+			</a>
+		</p>
+	</section>
+</mdlc-stripped-bordered-card>

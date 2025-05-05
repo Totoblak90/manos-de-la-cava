@@ -64,8 +64,9 @@
 
 	/* Spacing. */
 	--section-spacing: 40px;
-	--spacing-s: 12px;
+	--spacing-l: 32px;
 	--spacing-m: 24px;
+	--spacing-s: 12px;
 	--spacing-xs: 4px;
 }
 

@@ -1,0 +1,12 @@
+<figure>
+	<img
+		[src]="imageUrl()"
+		[alt]="altText()"
+		[attr.loading]="loadingAttribute()"
+		[attr.width]="width()"
+		[attr.height]="height()"
+	/>
+	@if (caption()) {
+		<figcaption>{{ caption() }}</figcaption>
+	}
+</figure>

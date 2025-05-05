@@ -1,3 +1,23 @@
 :host {
-  display: block;
+	display: block;
+}
+
+mdlc-image-viewer {
+	--image-aspect-ratio: 3 / 2;
+}
+
+mdlc-image-viewer.top-position {
+	--image-object-position: top;
+}
+
+p {
+	margin-bottom: var(--spacing-m);
+	max-width: 75ch;
+}
+
+@media (min-width: 768px) {
+	p,
+	ul {
+		max-width: 80ch;
+	}
 }

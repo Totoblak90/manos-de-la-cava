@@ -1,3 +1,15 @@
 :host {
-  display: block;
+	display: block;
+}
+
+.education-card {
+	--card-background-color: var(--quaternary-color);
+}
+
+.acompanamiento-escolar-section .content-media--image mdlc-image-viewer {
+	--image-height: 100%;
+	--image-width: auto;
+	--image-max-width: 100%;
+	--image-object-fit: cover;
+	--image-box-shadow: none;
 }

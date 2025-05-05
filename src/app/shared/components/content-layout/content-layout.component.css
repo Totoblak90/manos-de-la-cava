@@ -1,0 +1,97 @@
+:host {
+	--layout-direction-mobile: column;
+	--layout-direction-desktop: row;
+	--layout-items-align-mobile: center;
+	--layout-items-align-desktop: stretch;
+	--layout-gap-mobile: var(--spacing-l);
+	--layout-gap-desktop: var(--spacing-l);
+	--section-margin-bottom: var(--section-spacing);
+	--block-basis: 50%;
+	--block-width-mobile: 100%;
+	--media-border-radius: 12px;
+	--media-box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+
+	display: block;
+	width: 100%;
+	margin-bottom: var(--section-margin-bottom);
+}
+
+.layout-wrapper {
+	display: flex;
+	flex-direction: var(--layout-direction-mobile);
+	gap: var(--layout-gap-mobile);
+	align-items: var(--layout-items-align-mobile);
+	width: 100%;
+}
+
+:host > .layout-wrapper > ::slotted(*) {
+	width: var(--block-width-mobile);
+	max-width: 100%;
+	box-sizing: border-box;
+}
+
+:host(.layout-columns) > .layout-wrapper {
+	flex-direction: column;
+	align-items: stretch;
+	gap: var(--layout-gap-mobile);
+}
+:host(.layout-columns) > .layout-wrapper > ::slotted(*) {
+	width: 100%;
+	max-width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+:host > .layout-wrapper > ::slotted(.content-media) figure {
+	margin: 0;
+}
+
+:host > .layout-wrapper > ::slotted(.content-media) img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	border-radius: var(--media-border-radius);
+	box-shadow: var(--media-box-shadow);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+:host > .layout-wrapper > ::slotted(.content-media--card) {
+	padding: var(--spacing-m);
+	background-color: var(--secondary-light-color, #eeeeee);
+	border-radius: var(--media-border-radius);
+	box-shadow: var(--media-box-shadow);
+}
+
+@media (min-width: 992px) {
+	:host(.layout-split) > .layout-wrapper {
+		flex-direction: var(--layout-direction-desktop);
+		gap: var(--layout-gap-desktop);
+		align-items: var(--layout-items-align-desktop);
+	}
+
+	:host(.layout-split) > .layout-wrapper > ::slotted(*) {
+		flex-grow: 1;
+		flex-shrink: 1;
+		flex-basis: var(--block-basis);
+		width: auto;
+		max-width: var(--block-basis);
+	}
+
+	:host(.layout-split.layout-split--reverse) > .layout-wrapper > ::slotted(*:first-child) {
+		order: 2;
+	}
+	:host(.layout-split.layout-split--reverse) > .layout-wrapper > ::slotted(*:last-child) {
+		order: 1;
+	}
+
+	:host(.layout-columns) > .layout-wrapper {
+		gap: var(--layout-gap-desktop);
+	}
+
+	:host > .layout-wrapper > ::slotted(.content-media) img {
+		margin-left: 0;
+		margin-right: 0;
+		width: 100%;
+	}
+}

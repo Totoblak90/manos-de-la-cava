@@ -1,0 +1,23 @@
+:host {
+	--card-background-color: var(--secondary-light-color, #f0f0f0);
+	--card-border-radius: var(--media-border-radius, 12px);
+	--card-box-shadow: var(--media-box-shadow, 0 6px 16px rgba(0, 0, 0, 0.12));
+
+	display: block;
+	background-color: var(--card-background-color);
+	border-radius: var(--card-border-radius);
+	box-shadow: var(--card-box-shadow);
+	padding: var(--spacing-m, 24px);
+	height: 100%;
+	box-sizing: border-box;
+}
+
+.text-card-content {
+	color: var(--card-text-color, var(--text-color, #060606));
+}
+
+:host ::ng-deep p:last-child,
+:host ::ng-deep ul:last-child,
+:host ::ng-deep ol:last-child {
+	margin-bottom: 0;
+}

@@ -1,0 +1,14 @@
+<div class="gallery">
+	@for (image of images(); track image.imageUrl; let i = $index) {
+			<mdlc-image-viewer
+					class="gallery-item"
+					[imageUrl]="image.imageUrl"
+					[altText]="image.altText"
+					[width]="image.width ?? null"
+					[height]="image.height ?? null"
+					[lazyLoad]="image.lazyLoad !== undefined ? image.lazyLoad : true"
+			/>
+	} @empty {
+			<p>No hay imágenes para mostrar.</p>
+	}
+</div>

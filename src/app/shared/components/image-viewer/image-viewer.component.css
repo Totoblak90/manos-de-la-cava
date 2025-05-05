@@ -1,0 +1,69 @@
+:host {
+	--image-width: 100%;
+	--image-height: auto;
+	--image-max-width: 100%;
+	--image-max-height: none;
+	--image-object-fit: cover;
+	--image-aspect-ratio: auto;
+	--image-object-position: center;
+	--image-border-radius: 12px;
+	--image-box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+	--figcaption-color: var(--text-color, #333333);
+	--figcaption-font-size: 0.9rem;
+	--figcaption-text-align: center;
+	--figcaption-margin-top: var(--spacing-xs, 4px);
+	--image-current-transform: scale(1);
+	--image-current-transition: none;
+
+	display: block;
+	width: 100%;
+	height: 100%;
+	line-height: 0;
+	border-radius: var(--image-border-radius);
+	box-shadow: var(--image-box-shadow);
+	overflow: hidden;
+}
+
+figure {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+img {
+	display: block;
+	width: var(--image-width);
+	height: var(--image-height);
+	max-width: var(--image-max-width);
+	max-height: var(--image-max-height);
+
+	object-fit: var(--image-object-fit);
+	aspect-ratio: var(--image-aspect-ratio);
+	object-position: var(--image-object-position);
+
+	transform: var(--image-current-transform);
+	transition: var(--image-current-transition);
+}
+
+figcaption {
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	padding: var(--spacing-xs) var(--spacing-s);
+	box-sizing: border-box;
+	background: rgba(0, 0, 0, 0.5);
+
+	line-height: 1.4;
+	margin-top: var(--figcaption-margin-top);
+	font-size: var(--figcaption-font-size);
+	color: var(--figcaption-color);
+	text-align: var(--figcaption-text-align);
+}
+
+figcaption:empty {
+	display: none;
+}

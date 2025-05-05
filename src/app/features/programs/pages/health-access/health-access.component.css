@@ -1,3 +1,28 @@
 :host {
-  display: block;
+	display: block;
+}
+
+.quote-card {
+	--card-background-color: var(--senary-color);
+	--card-text-color: var(--senary-contrast-color);
+}
+.quote-card p:first-of-type {
+	font-style: italic;
+}
+.quote-card p:last-of-type {
+	text-align: right;
+	font-weight: bold;
+}
+
+.programa-integral-nutricion-image {
+	--image-aspect-ratio: 3 / 2;
+	--image-width: 100%;
+	--image-height: auto;
+	--image-object-fit: cover;
+}
+
+@media (min-width: 992px) {
+	mdlc-content-layout.layout-split .content-block--center-self {
+		align-self: center;
+	}
 }

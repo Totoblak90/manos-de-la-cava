@@ -2,10 +2,6 @@
 	display: block;
 }
 
-h2 {
-	margin-bottom: var(--spacing-m);
-}
-
 .card-list {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(205px, 1fr));

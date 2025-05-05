@@ -2,10 +2,6 @@
 	display: block;
 }
 
-h2 {
-	margin-bottom: var(--spacing-m);
-}
-
 mdlc-slider .swiper-slide {
 	display: flex;
 	justify-content: center;

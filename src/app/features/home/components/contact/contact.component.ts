@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
+import { StrippedBorderedCardComponent } from '@mdlc/shared/components/cards/stripped-bordered-card/stripped-bordered-card.component';
 import {
 	ADDRESS,
 	EMAIL,
@@ -10,7 +11,7 @@ import {
 
 @Component({
 	selector: 'mdlc-contact',
-	imports: [MatIconModule],
+	imports: [MatIconModule, StrippedBorderedCardComponent],
 	templateUrl: './contact.component.html',
 	styleUrl: './contact.component.css',
 	changeDetection: ChangeDetectionStrategy.OnPush,

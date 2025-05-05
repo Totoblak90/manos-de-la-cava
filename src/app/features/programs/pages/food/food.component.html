@@ -1,1 +1,31 @@
-<p>food works!</p>
+<mdlc-content-layout
+	class="layout-columns"
+	aria-labelledby="alimentacion-main-title"
+>
+	<div class="content-block">
+		<header>
+			<h1
+				id="alimentacion-main-title"
+				class="page-main-title"
+			>
+				Alimentación y Calidad Nutricional
+			</h1>
+		</header>
+		<p>
+			Esta área comprende todo lo relacionado a la alimentación de las familias que forman parte de la comunidad. En la
+			institución se ofrece desayuno, almuerzo y merienda de lunes a sábados para 400 personas durante todo el año.
+			Nuestros menúes son revisados por licenciados en nutrición regularmente para poder darle a nuestras familias la
+			mejor alimentación posible con los recursos que tenemos.
+		</p>
+	</div>
+
+	<div class="content-block content-media content-media--image">
+		<mdlc-image-viewer
+			imageUrl="assets/programs/kindergarten/manitos-1.webp"
+			altText="Preparación o distribución de alimentos nutritivos en Manos de la Cava."
+			[width]="1200"
+			[height]="800"
+			[lazyLoad]="false"
+		/>
+	</div>
+</mdlc-content-layout>

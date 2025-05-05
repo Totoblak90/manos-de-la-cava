@@ -6,3 +6,8 @@ h1 {
 	line-height: 1.2;
 	font-style: normal;
 }
+
+h1.section-title,
+h1.page-main-title {
+	margin-bottom: var(--spacing-l);
+}
