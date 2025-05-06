@@ -28,7 +28,7 @@ type BankAccountParams = typeof BANK_ACCOUNT & {
 export class DonateComponent {
 	protected readonly donationCards: IconTitleCard[] = [
 		{ title: 'Educación', icon: 'book', route: 'educacion' },
-		{ title: 'Jardín', icon: 'group', route: 'kindergarten' },
+		{ title: 'Jardín', icon: 'group', route: 'kindergarden' },
 		{ title: 'Deportes', icon: 'sports_soccer', route: 'deportes' },
 		{ title: 'Salud', icon: 'favorite', route: 'salud' },
 		{ title: 'Alimentación', icon: 'restaurant', route: 'food' },

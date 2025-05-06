@@ -20,7 +20,7 @@ export class CardListComponent {
 				imgUrl: 'assets/home/cards/card-1.webp',
 				imgAlt: 'Niño jugando en un tobogán',
 			},
-			linkHref: commonRoutePaths.programs.children.kinderGarten.url,
+			linkHref: commonRoutePaths.programs.children.kindergarden.url,
 		},
 		{
 			title: 'Educación',

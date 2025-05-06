@@ -34,6 +34,30 @@ export class IconRegistryService {
 			name: 'instagram',
 			path: 'assets/icons/logo-instagram.svg',
 		},
+		{
+			name: 'adults',
+			path: 'assets/icons/programs/adults.svg',
+		},
+		{
+			name: 'education',
+			path: 'assets/icons/programs/education.svg',
+		},
+		{
+			name: 'food',
+			path: 'assets/icons/programs/food.svg',
+		},
+		{
+			name: 'health-access',
+			path: 'assets/icons/programs/health-access.svg',
+		},
+		{
+			name: 'kindergarden',
+			path: 'assets/icons/programs/kindergarden.svg',
+		},
+		{
+			name: 'sports',
+			path: 'assets/icons/programs/sports.svg',
+		},
 	];
 
 	/** Register icons. */

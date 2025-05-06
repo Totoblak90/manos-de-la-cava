@@ -5,7 +5,7 @@ import { buildRoutePaths } from './build-route-paths';
  * They are used to build the routes for the programs section.
  */
 export const programsRoutePaths = buildRoutePaths({
-	kinderGarten: { path: 'primera-infancia' },
+	kindergarden: { path: 'primera-infancia' },
 	education: { path: 'educacion' },
 	healthAccess: { path: 'acceso-a-la-salud' },
 	sports: { path: 'deportes' },

@@ -9,8 +9,8 @@ export const programsRoutes: Routes = [
 		redirectTo: commonRoutePaths.home.url,
 	},
 	{
-		path: programsRoutePaths.kinderGarten.path,
-		loadComponent: () => import('./pages/kindergarten/kindergarten.component').then((c) => c.KindergartenComponent),
+		path: programsRoutePaths.kindergarden.path,
+		loadComponent: () => import('./pages/kindergarden/kindergarden.component').then((c) => c.KindergardenComponent),
 	},
 	{
 		path: programsRoutePaths.education.path,
