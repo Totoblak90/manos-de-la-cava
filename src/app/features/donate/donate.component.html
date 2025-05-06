@@ -12,14 +12,24 @@
 			</h1>
 		</header>
 		<p>Quiero Donar con tarjeta de crédito / débito</p>
-		<div class="donation-cards">
-			@for (card of donationCards; track card.title; let i = $index) {
+		<div class="donation-cards-grid">
+			@for (card of donationCards; track card.title) {
 				<a
-					class="donation-card"
-					[routerLink]="card.route"
+					class="donation-card-link"
+					[href]="donationLink"
+					target="_blank"
 				>
-					<mat-icon>{{ card.icon }}</mat-icon>
-					<span>{{ card.title }}</span>
+					<mdlc-icon-title-card
+						class="donation-card-item"
+						[title]="card.title"
+						[iconName]="card.icon"
+						[isSvgIcon]="true"
+						[ngStyle]="{
+							'--icon-title-card-bg-color': getBgColor(card.programName),
+							'--icon-title-card-color': getTextColor(card.programName),
+							'--icon-title-card-icon-color': getTextColor(card.programName),
+						}"
+					/>
 				</a>
 			}
 		</div>

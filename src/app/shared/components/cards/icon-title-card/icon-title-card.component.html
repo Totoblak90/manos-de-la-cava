@@ -1,22 +1,18 @@
-<section class="card-image-section">
-	<img
-		class="card-image-section__image"
-		[src]="imageParams().imgUrl"
-		[alt]="imageParams().imgAlt"
-	/>
-</section>
+<article class="card-icon-title">
+	<h3 class="title">{{ title() }}</h3>
 
-<section class="card-info-section">
-	<h3>{{ title() }}</h3>
-
-	<div class="card-info-section__description">
-		<p>{{ description() }}</p>
-	</div>
-
-	<a
-		class="secondary see-more-button"
-		[routerLink]="linkHref()"
-	>
-		Ver más
-	</a>
-</section>
+	@if (isSvgIcon()) {
+		<mat-icon
+			class="icon"
+			[svgIcon]="iconName()"
+			aria-hidden="true"
+		/>
+	} @else {
+		<mat-icon
+			class="icon"
+			aria-hidden="true"
+		>
+			{{ iconName() }}
+		</mat-icon>
+	}
+</article>

@@ -1,29 +1,39 @@
 :host {
+	--card-background-color: var(--secondary-color, #f5f5f5);
+	--card-text-color: var(--secondary-contrast-color, var(--text-color, #060606));
+
 	display: flex;
 	flex-direction: column;
 	padding: 10px;
 	border-radius: 8px;
-	background-color: var(--card-background-color, #f5f5f5);
+	background-color: var(--card-background-color);
 	max-height: 500px;
-	gap: 12px;
+	gap: var(--spacing-s, 12px);
 }
 
 .card-info-section {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	gap: 12px;
+	gap: var(--spacing-s, 12px);
 	flex-basis: calc(100% - 310px);
+	color: var(--card-text-color);
+}
+
+.card-info-section h3 {
+	color: var(--card-text-color);
+	margin-bottom: 0;
 }
 
 .card-info-section__description {
 	flex-grow: 1;
 	overflow-y: auto;
+	width: 100%;
+}
 
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+.card-info-section__description p {
+	color: var(--card-text-color);
+	margin: 0;
 }
 
 .see-more-button {
@@ -40,6 +50,7 @@
 	width: 100%;
 	object-fit: cover;
 	object-position: top center;
+	display: block;
 }
 
 @media screen and (min-width: 576px) {
@@ -50,6 +61,7 @@
 
 	.card-info-section {
 		flex-basis: 66%;
+		gap: var(--spacing-m);
 	}
 
 	.card-image-section {
@@ -58,7 +70,6 @@
 
 	.card-image-section .card-image-section__image {
 		height: 100%;
-		width: 100%;
 		object-position: center;
 	}
 }

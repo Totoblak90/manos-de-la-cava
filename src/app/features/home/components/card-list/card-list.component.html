@@ -9,6 +9,10 @@
 				[description]="card.description"
 				[imageParams]="card.imageParams"
 				[linkHref]="card.linkHref"
+				[ngStyle]="{
+					'--card-background-color': getBgColor(card.title),
+					'--card-text-color': getTextColor(card.title),
+				}"
 			/>
 		}
 	</article>

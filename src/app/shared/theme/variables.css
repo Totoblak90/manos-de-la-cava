@@ -20,34 +20,34 @@
 
 	--secondary-color: #f5f5f5;
 	--secondary-contrast-color: #000000;
-	--secondary-dark-color: #a0a0a0;
-	--secondary-dark-contrast-color: #000000;
+	--secondary-dark-color: #707070;
+	--secondary-dark-contrast-color: #ffffff;
 	--secondary-light-color: #ffffff;
 	--secondary-light-contrast-color: #000000;
 
 	--tertiary-color: #70b29f;
-	--tertiary-contrast-color: #ffffff;
+	--tertiary-contrast-color: #000000;
 	--tertiary-dark-color: #4a7a6a;
 	--tertiary-dark-contrast-color: #ffffff;
 	--tertiary-light-color: #a0d8c8;
 	--tertiary-light-contrast-color: #000000;
 
 	--quaternary-color: #f5a05c;
-	--quaternary-contrast-color: #ffffff;
+	--quaternary-contrast-color: #000000;
 	--quaternary-dark-color: #c8803a;
 	--quaternary-dark-contrast-color: #ffffff;
 	--quaternary-light-color: #f7c08a;
 	--quaternary-light-contrast-color: #000000;
 
 	--quinary-color: #4ca9df;
-	--quinary-contrast-color: #ffffff;
+	--quinary-contrast-color: #000000;
 	--quinary-dark-color: #2a7ca5;
 	--quinary-dark-contrast-color: #ffffff;
 	--quinary-light-color: #7fc4e8;
 	--quinary-light-contrast-color: #000000;
 
 	--senary-color: #ef6c6c;
-	--senary-contrast-color: #ffffff;
+	--senary-contrast-color: #000000;
 	--senary-dark-color: #b53a3a;
 	--senary-dark-contrast-color: #ffffff;
 	--senary-light-color: #f29a9a;
@@ -55,11 +55,8 @@
 
 	--background-color: white;
 	--background-contrast-color: black;
-
 	--icon-color: black;
-
 	--error-color: red;
-
 	--text-color: #060606;
 
 	/* Spacing. */
@@ -68,6 +65,10 @@
 	--spacing-m: 24px;
 	--spacing-s: 12px;
 	--spacing-xs: 4px;
+
+	/* Shadows */
+	--media-box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+	--media-box-shadow-hover: 0 6px 16px rgba(0, 0, 0, 0.24);
 }
 
 @media screen and (min-width: 575px) {

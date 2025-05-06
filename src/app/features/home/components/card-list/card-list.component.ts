@@ -1,11 +1,13 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { BaseCardComponent } from '@mdlc/shared/components/cards/base-card/base-card.component';
 import { BaseCard } from '@mdlc/shared/models/cards/base-card';
+import { getProgramBackgroundColor, getProgramTextColor } from '@mdlc/shared/utils/get-color-based-on-program';
 import { commonRoutePaths } from '@mdlc/shared/utils/route-paths/common-route-paths';
+import { NgStyle } from '@angular/common';
 
 @Component({
 	selector: 'mdlc-card-list',
-	imports: [BaseCardComponent],
+	imports: [NgStyle, BaseCardComponent],
 	templateUrl: './card-list.component.html',
 	styleUrl: './card-list.component.css',
 	changeDetection: ChangeDetectionStrategy.OnPush,
@@ -82,4 +84,10 @@ export class CardListComponent {
 			linkHref: commonRoutePaths.programs.children.socialInterventions.url,
 		},
 	];
+
+	/** Gets a color style based on the program name. */
+	protected getBgColor = getProgramBackgroundColor;
+
+	/** Gets a text color style based on the program name. */
+	protected getTextColor = getProgramTextColor;
 }

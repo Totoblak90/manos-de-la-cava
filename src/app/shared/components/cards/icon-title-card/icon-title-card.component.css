@@ -1,3 +1,38 @@
 :host {
-  display: block;
+	--icon-title-card-box-shadow: var(--media-box-shadow, 0 6px 16px rgba(0, 0, 0, 0.12));
+	--icon-title-card-bg-color: var(--primary-color, #f0f0f0);
+	--icon-title-card-border-radius: 8px;
+	--icon-title-card-max-width: 100%;
+	--icon-title-card-padding: var(--spacing-s);
+	--icon-title-card-color: var(--primary-contrast-color, #ffffff);
+
+	--icon-title-card-title-font-size: 1.8rem;
+	--icon-title-card-icon-font-size: 2.5rem;
+	--icon-title-card-icon-dimension: 2.5rem;
+
+	display: block;
+	padding: var(--icon-title-card-padding);
+	background-color: var(--icon-title-card-bg-color, var(--primary-color));
+	max-width: var(--icon-title-card-max-width);
+	border-radius: var(--icon-title-card-border-radius);
+	box-shadow: var(--icon-title-card-box-shadow);
+	color: var(--icon-title-card-color);
+}
+
+article {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.title {
+	font-size: var(--icon-title-card-title-font-size);
+}
+
+mat-icon.icon {
+	font-size: var(--icon-title-card-icon-font-size);
+	width: var(--icon-title-card-icon-dimension);
+	height: var(--icon-title-card-icon-dimension);
+	color: inherit;
+	fill: currentColor;
 }
