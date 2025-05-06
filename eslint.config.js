@@ -1,11 +1,10 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { resolve } from 'node:path';
 
-import { fixupPluginRules, includeIgnoreFile } from '@eslint/compat';
+import { includeIgnoreFile } from '@eslint/compat';
 import { default as saritasaEslintConfig } from '@saritasa/eslint-config-saritasa';
 import { config as tsEslintConfig } from 'typescript-eslint';
 import { configs as angularEslintConfigs, processInlineTemplates } from 'angular-eslint';
-import rxjs from 'eslint-plugin-rxjs';
 
 export default tsEslintConfig(
 
@@ -24,11 +23,11 @@ export default tsEslintConfig(
 			},
 		},
 		plugins: {
-			rxjs: fixupPluginRules(rxjs),
 		},
 		extends: [
 			...saritasaEslintConfig,
 			...angularEslintConfigs.tsRecommended,
+			'plugin:rxjs/recommended'
 		],
 		rules: {
 			'@typescript-eslint/no-unused-vars': [
@@ -59,46 +58,6 @@ export default tsEslintConfig(
 				'error',
 				{
 					allowRuleToRunWithoutStrictNullChecksIKnowWhatIAmDoing: true,
-				},
-			],
-			'rxjs/finnish': [
-				'error',
-				{
-					functions: false,
-					methods: false,
-					names: {
-						'^(canActivate|canActivateChild|canDeactivate|canMatch|intercept|resolve|validate|.*Subject)$': false,
-					},
-					parameters: true,
-					properties: true,
-					strict: true,
-					types: {
-						'^EventEmitter$': false,
-					},
-					variables: true,
-				},
-			],
-			'rxjs/no-ignored-replay-buffer': 'error',
-			'rxjs/no-internal': 'error',
-			'rxjs/no-nested-subscribe': 'error',
-			'rxjs/no-unbound-methods': 'error',
-			'rxjs/throw-error': 'error',
-			'rxjs/no-async-subscribe': 'error',
-			'rxjs/no-create': 'error',
-			'rxjs/no-ignored-observable': 'error',
-			'rxjs/no-implicit-any-catch': 'error',
-			'rxjs/no-index': 'error',
-			'rxjs/no-sharereplay': [
-				'error',
-				{
-					allowConfig: true,
-				},
-			],
-			'rxjs/no-subclass': 'error',
-			'rxjs/no-unsafe-takeuntil': [
-				'error',
-				{
-					alias: ['takeUntilDestroyed'],
 				},
 			],
 			'jsdoc/tag-lines': 'off',
