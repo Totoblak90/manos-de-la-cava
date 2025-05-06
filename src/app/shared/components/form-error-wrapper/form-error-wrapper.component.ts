@@ -1,9 +1,10 @@
-import { ChangeDetectionStrategy, Component, ContentChild, DestroyRef, inject, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ContentChild, DestroyRef, inject, Input, OnInit } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { distinct, EMPTY, filter, map, merge, Observable, ReplaySubject, switchMap, tap } from 'rxjs';
 import { FormControlDirective, NgControl, NgModel, ValidationErrors } from '@angular/forms';
 import { AppValidators } from '@mdlc/shared/utils/validators';
 import { listenControlTouched } from '@mdlc/shared/utils/rxjs/listen-control-touched';
+
 import { ValidationMessageComponent } from '../validation-message/validation-message.component';
 
 @Component({
@@ -14,7 +15,7 @@ import { ValidationMessageComponent } from '../validation-message/validation-mes
 	standalone: true,
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FormErrorWrapperComponent {
+export class FormErrorWrapperComponent implements OnInit {
 	/** Form control directive. */
 	protected readonly input$ = new ReplaySubject<NgModel | FormControlDirective>(1);
 
@@ -39,19 +40,19 @@ export class FormErrorWrapperComponent {
 
 	/** @inheritDoc */
 	public ngOnInit(): void {
-		this.initErrorStreamSideEffect().pipe(takeUntilDestroyed(this.destroyRef)).subscribe();
+		this.initErrorStreamSideEffect().pipe(takeUntilDestroyed(this.destroyRef))
+			.subscribe();
 	}
 
 	private initErrorStreamSideEffect(): Observable<ValidationErrors | null> {
 		return this.input$.pipe(
 			distinct(),
-			switchMap((input) =>
+			switchMap(input =>
 				merge(
 					input.statusChanges ?? EMPTY,
-					listenControlTouched(input.control).pipe(filter((touched) => touched)),
-				).pipe(map(() => input)),
-			),
-			tap((input) => this.errorsSubject.next(input.errors)),
+					listenControlTouched(input.control).pipe(filter(touched => touched)),
+				).pipe(map(() => input))),
+			tap(input => this.errorsSubject.next(input.errors)),
 		);
 	}
 }

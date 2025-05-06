@@ -1,8 +1,10 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ContentLayoutComponent } from '@mdlc/shared/components/content-layout/content-layout.component';
 import { ImageViewerComponent } from '@mdlc/shared/components/image-viewer/image-viewer.component';
-import { GalleryComponent } from '../../components/gallery/gallery.component';
+
 import { GalleryItem } from '@mdlc/shared/models/gallery-item';
+
+import { GalleryComponent } from '../../components/gallery/gallery.component';
 
 @Component({
 	selector: 'mdlc-adults',
@@ -26,6 +28,5 @@ export class AdultsComponent {
 			height: 400,
 		},
 	];
-
 
 }

@@ -40,18 +40,18 @@ export class ContactComponent {
 	/** Address. */
 	get prettifiedAddress(): string {
 		return (
-			ADDRESS.streetName +
-			' ' +
-			ADDRESS.streetNumber +
-			', ' +
-			ADDRESS.city +
-			'. Código Postal: ' +
-			ADDRESS.postalCode +
-			', ' +
-			ADDRESS.province +
-			', ' +
-			ADDRESS.country +
-			'.'
+			`${ADDRESS.streetName
+			} ${
+				ADDRESS.streetNumber
+			}, ${
+				ADDRESS.city
+			}. Código Postal: ${
+				ADDRESS.postalCode
+			}, ${
+				ADDRESS.province
+			}, ${
+				ADDRESS.country
+			}.`
 		);
 	}
 }

@@ -1,4 +1,5 @@
-export interface GalleryItem {
+export type GalleryItem = {
+
 	/** Image url. */
 	readonly imageUrl: string;
 
@@ -13,4 +14,4 @@ export interface GalleryItem {
 
 	/** Lazy load. */
 	readonly lazyLoad?: boolean;
-}
+};

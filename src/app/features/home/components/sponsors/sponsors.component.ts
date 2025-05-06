@@ -13,7 +13,7 @@ import { Image } from '@mdlc/shared/models/image';
 })
 export class SponsorsComponent {
 	/** Amount of items per slide. */
-	protected itemsPerSlide: number = 4;
+	protected itemsPerSlide = 4;
 
 	/** Sponsors. */
 	protected readonly sponsors: Image[] = [

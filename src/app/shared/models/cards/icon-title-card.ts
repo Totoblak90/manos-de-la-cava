@@ -1,7 +1,8 @@
 import { IconName } from '../icon';
 import { ProgramName } from '../program';
 
-export interface IconTitleCard {
+export type IconTitleCard = {
+
 	/** Program name. */
 	readonly programName: ProgramName;
 
@@ -13,4 +14,4 @@ export interface IconTitleCard {
 
 	/** Route.  */
 	readonly route?: string;
-}
+};

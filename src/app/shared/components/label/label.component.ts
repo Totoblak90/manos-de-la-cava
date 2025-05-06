@@ -1,6 +1,8 @@
 import { ChangeDetectionStrategy, Component, ContentChild, input, viewChild } from '@angular/core';
-import { FormErrorWrapperComponent } from '../form-error-wrapper/form-error-wrapper.component';
+
 import { FormControlDirective, NgControl, NgModel } from '@angular/forms';
+
+import { FormErrorWrapperComponent } from '../form-error-wrapper/form-error-wrapper.component';
 
 @Component({
 	selector: 'mdlc-label',

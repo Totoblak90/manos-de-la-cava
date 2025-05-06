@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { Image } from '@mdlc/shared/models/image';
+
 import { ImageViewerComponent } from '../image-viewer/image-viewer.component';
 
 @Component({

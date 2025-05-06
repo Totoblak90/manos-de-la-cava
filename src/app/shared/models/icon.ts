@@ -1,4 +1,5 @@
 import { kebabToPascalCase } from '../utils/kebab-to-pascal-case';
+
 /**
  * List of all registered icons.
  * Each icon has a name and a path to its SVG file.

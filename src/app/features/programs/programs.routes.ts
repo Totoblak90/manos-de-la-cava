@@ -1,6 +1,8 @@
 import { Routes } from '@angular/router';
-import { programsRoutePaths } from '../../shared/utils/route-paths/programs-route-paths';
+
 import { commonRoutePaths } from '@mdlc/shared/utils/route-paths/common-route-paths';
+
+import { programsRoutePaths } from '../../shared/utils/route-paths/programs-route-paths';
 
 export const programsRoutes: Routes = [
 	{
@@ -10,32 +12,32 @@ export const programsRoutes: Routes = [
 	},
 	{
 		path: programsRoutePaths.kindergarden.path,
-		loadComponent: () => import('./pages/kindergarden/kindergarden.component').then((c) => c.KindergardenComponent),
+		loadComponent: () => import('./pages/kindergarden/kindergarden.component').then(c => c.KindergardenComponent),
 	},
 	{
 		path: programsRoutePaths.education.path,
-		loadComponent: () => import('./pages/education/education.component').then((c) => c.EducationComponent),
+		loadComponent: () => import('./pages/education/education.component').then(c => c.EducationComponent),
 	},
 	{
 		path: programsRoutePaths.healthAccess.path,
-		loadComponent: () => import('./pages/health-access/health-access.component').then((c) => c.HealthAccessComponent),
+		loadComponent: () => import('./pages/health-access/health-access.component').then(c => c.HealthAccessComponent),
 	},
 	{
 		path: programsRoutePaths.sports.path,
-		loadComponent: () => import('./pages/sports/sports.component').then((c) => c.SportsComponent),
+		loadComponent: () => import('./pages/sports/sports.component').then(c => c.SportsComponent),
 	},
 	{
 		path: programsRoutePaths.adults.path,
-		loadComponent: () => import('./pages/adults/adults.component').then((c) => c.AdultsComponent),
+		loadComponent: () => import('./pages/adults/adults.component').then(c => c.AdultsComponent),
 	},
 	{
 		path: programsRoutePaths.food.path,
-		loadComponent: () => import('./pages/food/food.component').then((c) => c.FoodComponent),
+		loadComponent: () => import('./pages/food/food.component').then(c => c.FoodComponent),
 	},
 	{
 		path: programsRoutePaths.socialInterventions.path,
 		loadComponent: () =>
-			import('./pages/social-interventions/social-interventions.component').then((c) => c.SocialInterventionsComponent),
+			import('./pages/social-interventions/social-interventions.component').then(c => c.SocialInterventionsComponent),
 	},
 	{
 		path: '**',

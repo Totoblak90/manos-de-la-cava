@@ -8,7 +8,7 @@ import { GalleryItem } from '@mdlc/shared/models/gallery-item';
 	selector: 'mdlc-kindergarden',
 	imports: [ContentLayoutComponent, ImageViewerComponent, GalleryComponent],
 	templateUrl: './kindergarden.component.html',
-	styleUrls: ['../../programs.component.css','./kindergarden.component.css'],
+	styleUrls: ['../../programs.component.css', './kindergarden.component.css'],
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class KindergardenComponent {

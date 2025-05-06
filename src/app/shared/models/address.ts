@@ -1,4 +1,5 @@
 export type Address = {
+
 	/** Street name. */
 	readonly streetName: string;
 

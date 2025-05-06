@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+
 import { HeroComponent } from './components/hero/hero.component';
 import { CardListComponent } from './components/card-list/card-list.component';
 import { SponsorsComponent } from './components/sponsors/sponsors.component';

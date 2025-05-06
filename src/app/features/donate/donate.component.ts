@@ -15,12 +15,14 @@ const DONAR_ONLINE_CAMPAIGN = 'https://donaronline.org/manos-de-la-cava/ayuda-a-
 
 /** Mercadopago account info. */
 type MercadoPagoParams = typeof MERCADOPAGO_ACCOUNT & {
+
 	/** Title. */
 	readonly title: string;
 };
 
 /** Bank account info. */
 type BankAccountParams = typeof BANK_ACCOUNT & {
+
 	/** Title. */
 	readonly title: string;
 };

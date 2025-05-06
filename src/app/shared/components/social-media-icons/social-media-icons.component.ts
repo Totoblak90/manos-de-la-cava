@@ -4,6 +4,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { SOCIAL_MEDIA } from '@mdlc/shared/constants/institutional-info/institutional-info';
 
 type SocialMediaIconLink = {
+
 	/** Href. */
 	readonly href: string;
 

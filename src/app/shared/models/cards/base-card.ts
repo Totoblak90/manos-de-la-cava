@@ -1,6 +1,7 @@
 import { Image } from '../image';
 
 export type BaseCard = {
+
 	/** Title. */
 	readonly title: string;
 

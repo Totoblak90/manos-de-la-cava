@@ -34,4 +34,3 @@ export const SOCIAL_MEDIA = {
 	facebook: FACEBOOK,
 	youtube: YOUTUBE,
 };
-

@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, computed } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { ADDRESS, EMAIL } from '@mdlc/shared/constants/institutional-info/institutional-info';
+
 import { SocialMediaIconsComponent } from '../social-media-icons/social-media-icons.component';
 
 @Component({
