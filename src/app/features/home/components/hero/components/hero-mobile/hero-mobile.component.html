@@ -2,23 +2,30 @@
 	@for (image of topImages; track $index) {
 		<mdlc-image-viewer
 			class="image-viewer"
-			[imgUrl]="image.imgUrl"
-			[imgAlt]="image.imgAlt"
+			[imageUrl]="image.imgUrl"
+			[altText]="image.imgAlt"
+			[lazyLoad]="false"
 		/>
 	}
 </article>
 
 <div class="content-container">
 	<h1>Acompañamos, contenemos y abrimos caminos.</h1>
-	<a class="primary donate-button" routerLink="donar">Donar</a>
+	<a
+		class="primary donate-button"
+		routerLink="donar"
+	>
+		Donar
+	</a>
 </div>
 
 <article class="bottom-images-container">
 	@for (image of bottomImages; track $index) {
 		<mdlc-image-viewer
 			class="image-viewer"
-			[imgUrl]="image.imgUrl"
-			[imgAlt]="image.imgAlt"
+			[imageUrl]="image.imgUrl"
+			[altText]="image.imgAlt"
+			[lazyLoad]="false"
 		/>
 	}
 </article>

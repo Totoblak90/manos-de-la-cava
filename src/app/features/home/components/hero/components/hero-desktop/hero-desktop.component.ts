@@ -1,8 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { ImageViewerComponent } from '@mdlc/shared/components/image-viewer/image-viewer.component';
 import { Image } from '@mdlc/shared/models/image';
-
-import { ImageViewerComponent } from '../image-viewer/image-viewer.component';
 
 @Component({
 	selector: 'mdlc-hero-desktop',

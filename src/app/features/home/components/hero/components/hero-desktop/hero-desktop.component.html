@@ -12,8 +12,9 @@
 		@for (image of leftColumnImages; track $index) {
 			<mdlc-image-viewer
 				class="image-viewer"
-				[imgUrl]="image.imgUrl"
-				[imgAlt]="image.imgAlt"
+				[imageUrl]="image.imgUrl"
+				[altText]="image.imgAlt"
+				[lazyLoad]="false"
 			/>
 		}
 	</article>
@@ -22,8 +23,9 @@
 		@for (image of rightColumnImages; track $index) {
 			<mdlc-image-viewer
 				class="image-viewer"
-				[imgUrl]="image.imgUrl"
-				[imgAlt]="image.imgAlt"
+				[imageUrl]="image.imgUrl"
+				[altText]="image.imgAlt"
+				[lazyLoad]="false"
 			/>
 		}
 	</article>

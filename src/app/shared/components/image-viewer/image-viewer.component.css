@@ -12,12 +12,17 @@
 	--figcaption-font-size: 0.9rem;
 	--figcaption-text-align: center;
 	--figcaption-margin-top: var(--spacing-xs, 4px);
+
+	--image-transform-on-hover: scale(1);
+	--image-transition-on-hover: none;
 	--image-current-transform: scale(1);
 	--image-current-transition: none;
+	--image-transition-duration-on-revert: 0.3s;
+	--image-transition-timing-on-revert: ease-out;
 
 	display: block;
-	width: 100%;
-	height: 100%;
+	width: var(--image-width);
+	height: var(--image-height);
 	line-height: 0;
 	border-radius: var(--image-border-radius);
 	box-shadow: var(--image-box-shadow);
@@ -36,17 +41,25 @@ figure {
 
 img {
 	display: block;
-	width: var(--image-width);
-	height: var(--image-height);
+	width: 100%;
+	height: 100%;
 	max-width: var(--image-max-width);
 	max-height: var(--image-max-height);
+	border-radius: var(--image-border-radius);
 
 	object-fit: var(--image-object-fit);
 	aspect-ratio: var(--image-aspect-ratio);
 	object-position: var(--image-object-position);
 
 	transform: var(--image-current-transform);
-	transition: var(--image-current-transition);
+	transition:
+		var(--image-current-transition),
+		transform var(--image-transition-duration-on-revert, 0.3s) var(--image-transition-timing-on-revert, ease-out);
+}
+
+:host(:hover) img {
+	transform: var(--image-transform-on-hover);
+	transition: var(--image-transition-on-hover);
 }
 
 figcaption {

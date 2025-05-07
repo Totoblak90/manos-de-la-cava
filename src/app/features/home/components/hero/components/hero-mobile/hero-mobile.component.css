@@ -1,39 +1,38 @@
 :host {
-	--image-viewer-h: 65px;
-	--image-viewer-w: 95px;
+	--hero-mobile-image-viewer-h: 100px;
 
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-s);
+	gap: var(--spacing-m);
 }
 
-.top-images-container {
+.top-images-container,
+.bottom-images-container {
 	display: flex;
-	align-items: center;
+	align-items: stretch;
 	justify-content: center;
 	gap: var(--spacing-s);
 }
 
 .bottom-images-container {
-	display: flex;
 	align-items: flex-start;
-	justify-content: center;
-	gap: var(--spacing-s);
-	height: calc(var(--image-viewer-h) + var(--spacing-s));
 }
 
 .bottom-images-container > .image-viewer:nth-child(2) {
-	align-self: flex-end;
+	transform: translateY(calc(var(--hero-mobile-image-viewer-h) * 0.25));
 }
 
 .content-container {
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-xs);
+	gap: var(--spacing-s);
+	text-align: center;
 }
 
-h1 {
-	text-align: var(--hero-text-align, center);
+.content-container h1 {
+	margin-bottom: 0;
+	font-size: 2.2rem;
+	line-height: 1.2;
 }
 
 .donate-button {
@@ -41,14 +40,45 @@ h1 {
 }
 
 .image-viewer {
-	--image-viewer-width: var(--image-viewer-w);
-	--image-viewer-height: var(--image-viewer-h);
-	--image-viewer-radius: 16px;
+	flex-grow: 0;
+	flex-shrink: 0;
+	width: auto;
+	max-width: 120px;
+
+	--image-height: var(--hero-mobile-image-viewer-h);
+	--image-width: 100%;
+	--image-border-radius: 16px;
+	--image-object-fit: cover;
+	--image-object-position: top center;
+	--image-aspect-ratio: 1;
+	--image-box-shadow: var(--media-box-shadow);
+
+	overflow: hidden;
+}
+
+@media screen and (min-width: 375px) {
+	:host {
+		--hero-mobile-image-viewer-h: 110px;
+	}
+	.image-viewer {
+		max-width: 130px;
+	}
+	.bottom-images-container > .image-viewer:nth-child(2) {
+		transform: translateY(calc(var(--hero-mobile-image-viewer-h) * 0.2));
+	}
 }
 
 @media screen and (min-width: 425px) {
 	:host {
-		--image-viewer-h: 100px;
-		--image-viewer-w: 140px;
+		--hero-mobile-image-viewer-h: 120px;
+	}
+	.image-viewer {
+		max-width: 140px;
+	}
+	.bottom-images-container > .image-viewer:nth-child(2) {
+		transform: translateY(calc(var(--hero-mobile-image-viewer-h) * 0.15));
+	}
+	.content-container h1 {
+		font-size: 2.5rem;
 	}
 }
