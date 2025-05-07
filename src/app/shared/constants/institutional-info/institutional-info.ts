@@ -28,6 +28,12 @@ export const FACEBOOK = 'https://www.facebook.com/ManosDeLaCava/?locale=es_LA';
 /** YouTube URL. */
 export const YOUTUBE = 'https://www.youtube.com/@manosdelacava6206';
 
+/** Formatted address for google maps. */
+const ADDRESS_FOR_MAP = `${ADDRESS.streetName} ${ADDRESS.streetNumber}, ${ADDRESS.city}, ${ADDRESS.province}, ${ADDRESS.postalCode}, ${ADDRESS.country}`;
+
+/** Google Maps URL. */
+export const GOOGLE_MAPS_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(ADDRESS_FOR_MAP)}`;
+
 /** Social media urls. */
 export const SOCIAL_MEDIA = {
 	instagram: INSTAGRAM,

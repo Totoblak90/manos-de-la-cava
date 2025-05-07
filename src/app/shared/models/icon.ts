@@ -47,6 +47,18 @@ export const ALL_REGISTERED_ICONS = [
 		name: 'sports',
 		path: 'assets/icons/programs/sports.svg',
 	},
+	{
+		name: 'heart',
+		path: 'assets/icons/heart.svg',
+	},
+	{
+		name: 'ui_kit',
+		path: 'assets/icons/ui-kit.svg',
+	},
+	{
+		name: 'github',
+		path: 'assets/icons/logo-github.svg',
+	}
 ] as const;
 
 export type IconName = (typeof ALL_REGISTERED_ICONS)[number]['name'];

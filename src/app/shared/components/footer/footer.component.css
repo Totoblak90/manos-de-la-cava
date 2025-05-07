@@ -12,6 +12,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	gap: var(--spacing-m);
 
 	overflow: hidden;
 }
@@ -27,7 +28,7 @@
 	max-width: 100px;
 }
 
-.logo-container button {
+.logo-container a {
 	--container-size: 75px;
 
 	width: var(--container-size);
@@ -45,14 +46,31 @@
 .institutional-info-container {
 	flex-grow: 1;
 	color: var(--text-color);
+
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	gap: var(--spacing-s);
 }
 
-.institutional-info-container p {
-	text-align: center;
-}
-
-.email {
+.institutional-info-container a {
 	color: var(--text-color);
+}
+
+.google-maps,
+.dedication {
+	display: flex;
+	align-items: center;
+}
+
+.dedication {
+	gap: 0.25em;
+}
+
+.dedication a {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.25em;
 }
 
 .footer-top .social-media-icons-desktop {
@@ -72,6 +90,10 @@
 
 	.footer-top .social-media-icons-desktop {
 		display: flex;
+	}
+
+	.institutional-info-container {
+		align-items: center;
 	}
 }
 

@@ -8,7 +8,8 @@ import {
 	INSTAGRAM,
 	PHONE,
 	NAME as ORG_NAME, // Importamos el nombre de la ONG si queremos usarlo
-	YOUTUBE, // Añadimos YouTube si lo tienes
+	YOUTUBE,
+	GOOGLE_MAPS_URL, // Añadimos YouTube si lo tienes
 } from '@mdlc/shared/constants/institutional-info/institutional-info';
 
 interface ContactMethod {
@@ -47,7 +48,7 @@ export class ContactComponent {
 		{
 			icon: 'location_on',
 			label: this.prettifiedAddress,
-			href: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(this.prettifiedAddressForMap)}`,
+			href: GOOGLE_MAPS_URL,
 			ariaLabel: `Ver la dirección de ${ORG_NAME} en el mapa`,
 			isExternal: true,
 			detail: '¡Visitanos cuando quieras!',
@@ -85,9 +86,5 @@ export class ContactComponent {
 
 	private get prettifiedAddress(): string {
 		return `${ADDRESS.streetName} ${ADDRESS.streetNumber}, ${ADDRESS.city}, ${ADDRESS.province}. CP: ${ADDRESS.postalCode}. ${ADDRESS.country}.`;
-	}
-
-	private get prettifiedAddressForMap(): string {
-		return `${ADDRESS.streetName} ${ADDRESS.streetNumber}, ${ADDRESS.city}, ${ADDRESS.province}, ${ADDRESS.postalCode}, ${ADDRESS.country}`;
 	}
 }
