@@ -1,5 +1,5 @@
 import { NgStyle } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
 import { IconTitleCardComponent } from '@mdlc/shared/components/cards/icon-title-card/icon-title-card.component';
@@ -11,6 +11,8 @@ import { Icons } from '@mdlc/shared/models/icon';
 import { getProgramBackgroundColor, getProgramTextColor } from '@mdlc/shared/utils/get-color-based-on-program';
 import { DonationInfoCardComponent } from './components/donation-info-card/donation-info-card.component';
 import { DonationInfoCardData } from '@mdlc/shared/models/cards/donation-card';
+import { MetaTagConfig } from '@mdlc/shared/models/meta-tag-config';
+import { MetaTagService } from '@mdlc/shared/services/meta-tag.service';
 
 const DONAR_ONLINE_CAMPAIGN = 'https://donaronline.org/manos-de-la-cava/ayuda-a-manos-de-la-cava';
 
@@ -28,7 +30,9 @@ const DONAR_ONLINE_CAMPAIGN = 'https://donaronline.org/manos-de-la-cava/ayuda-a-
 	styleUrl: './donate.component.css',
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DonateComponent {
+export class DonateComponent implements OnInit {
+	private readonly metaTagService = inject(MetaTagService);
+
 	/** Donation cards. */
 	protected readonly donationCards: IconTitleCard[] = [
 		{ programName: 'Educación', title: 'Educación', icon: Icons.Education, route: 'educacion' },
@@ -73,4 +77,36 @@ export class DonateComponent {
 
 	/** Gets a text color style based on the program name. */
 	protected getTextColor = getProgramTextColor;
+
+	/** @inheritdoc */
+	public ngOnInit(): void {
+		const pageSpecificTitle = 'Donar a Manos de La Cava | Apoyá Nuestros Programas';
+		const pageSpecificDescription =
+			'Tu donación transforma vidas en La Cava, Beccar. Colaborá con Manos de La Cava a través de Donar Online, Mercado Pago o transferencia bancaria y ayudanos a seguir creciendo.';
+
+		const defaultOgImage = `${this.metaTagService.getBaseUrl()}/assets/social/manos-de-la-cava-default.webp`;
+		const defaultOgImageAlt = 'Manos de La Cava: Hacé tu donación y apoyá nuestros proyectos sociales.';
+
+		const donateMeta: MetaTagConfig = {
+			title: pageSpecificTitle,
+			description: pageSpecificDescription,
+			keywords:
+				'donar ONG, donaciones La Cava, colaborar Manos de La Cava, ayuda social San Isidro, donar online, transferencia bancaria ONG, Mercado Pago donación, apoyar programas sociales',
+			robots: 'index, follow',
+
+			ogTitle: `¡Sumate! Doná a Manos de La Cava y Transformá Realidades`,
+			ogDescription: pageSpecificDescription,
+			ogType: 'website',
+			ogImage: defaultOgImage,
+			ogImageAlt: defaultOgImageAlt,
+
+			twitterCard: 'summary_large_image',
+			twitterTitle: `¡Sumate! Doná a Manos de La Cava y Transformá Realidades`,
+			twitterDescription: pageSpecificDescription,
+			twitterImage: defaultOgImage,
+			twitterImageAlt: defaultOgImageAlt,
+		};
+
+		this.metaTagService.updateAllTags(donateMeta);
+	}
 }
