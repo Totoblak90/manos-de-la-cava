@@ -1,0 +1,56 @@
+@let data =
+	{
+		cardData: cardData(),
+		svgIcon: cardData().svgIconName,
+		iconName: cardData().iconName,
+		cardTitle: cardData().title,
+		qrCodeUrl: cardData().qrCodeUrl,
+	};
+
+@if (data.cardData) {
+	<article
+		class="donation-info-card"
+		[style.--card-accent-color]="data.cardData.accentColor || 'var(--primary-color)'"
+	>
+		<header class="card-header">
+			<mat-icon class="header-icon">{{ data.iconName }}</mat-icon>
+			<h3 class="card-title">{{ data.cardTitle }}</h3>
+		</header>
+
+		<section class="card-content">
+			@for (field of data.cardData.fields; track field.label) {
+				<div class="info-field">
+					<span class="field-label">{{ field.label }}:</span>
+					<div class="value-container">
+						<span class="field-value">{{ field.value }}</span>
+						@if (field.isCopiable) {
+							<button
+								mat-icon-button
+								(click)="copyToClipboard(field.value, field.label)"
+								[attr.aria-label]="'Copiar ' + field.label"
+								class="copy-button"
+								[class.copied]="copiedStates()[field.label]"
+							>
+								<mat-icon>{{ copiedStates()[field.label] ? "check" : "content_copy" }}</mat-icon>
+							</button>
+						}
+					</div>
+					@if (field.notes) {
+						<span class="field-notes">{{ field.notes }}</span>
+					}
+				</div>
+			}
+		</section>
+
+		@if (data.qrCodeUrl) {
+			<section class="qr-code-section">
+				<img
+					[src]="data.qrCodeUrl"
+					alt="Código QR para donar"
+					class="qr-code-image"
+				/>
+				<p class="qr-instructions">Escaneá el QR para donar</p>
+			</section>
+		}
+	</article>
+}

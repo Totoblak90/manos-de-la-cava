@@ -3,29 +3,17 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
 import { IconTitleCardComponent } from '@mdlc/shared/components/cards/icon-title-card/icon-title-card.component';
-import { StrippedBorderedCardComponent } from '@mdlc/shared/components/cards/stripped-bordered-card/stripped-bordered-card.component';
 import { ContentLayoutComponent } from '@mdlc/shared/components/content-layout/content-layout.component';
 import { BANK_ACCOUNT } from '@mdlc/shared/constants/financial-info/bank-account';
 import { MERCADOPAGO_ACCOUNT } from '@mdlc/shared/constants/financial-info/mercadopago';
 import { IconTitleCard } from '@mdlc/shared/models/cards/icon-title-card';
-import { IconName, Icons } from '@mdlc/shared/models/icon';
+import { Icons } from '@mdlc/shared/models/icon';
 import { getProgramBackgroundColor, getProgramTextColor } from '@mdlc/shared/utils/get-color-based-on-program';
+import { DonationInfoCardComponent } from './components/donation-info-card/donation-info-card.component';
+import { DonationInfoCardData } from '@mdlc/shared/models/cards/donation-card';
 
 const DONAR_ONLINE_CAMPAIGN = 'https://donaronline.org/manos-de-la-cava/ayuda-a-manos-de-la-cava';
 
-/** Mercadopago account info. */
-type MercadoPagoParams = typeof MERCADOPAGO_ACCOUNT & {
-
-	/** Title. */
-	readonly title: string;
-};
-
-/** Bank account info. */
-type BankAccountParams = typeof BANK_ACCOUNT & {
-
-	/** Title. */
-	readonly title: string;
-};
 @Component({
 	selector: 'mdlc-donate',
 	imports: [
@@ -33,7 +21,7 @@ type BankAccountParams = typeof BANK_ACCOUNT & {
 		NgStyle,
 		MatIconModule,
 		ContentLayoutComponent,
-		StrippedBorderedCardComponent,
+		DonationInfoCardComponent,
 		IconTitleCardComponent,
 	],
 	templateUrl: './donate.component.html',
@@ -52,21 +40,29 @@ export class DonateComponent {
 	];
 
 	/** Mercado Pago Info. */
-	protected readonly mercadoPago: MercadoPagoParams = {
-		title: 'MERCADO PAGO',
-		alias: MERCADOPAGO_ACCOUNT.alias,
-		cvu: MERCADOPAGO_ACCOUNT.cvu,
+	protected readonly mercadoPagoData: DonationInfoCardData = {
+		title: 'Doná con Mercado Pago',
+		iconName: 'account_balance',
+		accentColor: 'var(--mp-blue, #009EE3)',
+		fields: [
+			{ label: 'Alias', value: MERCADOPAGO_ACCOUNT.alias, isCopiable: true },
+			{ label: 'CVU', value: MERCADOPAGO_ACCOUNT.cvu, isCopiable: true },
+		],
 	};
 
 	/** Bank Info. */
-	protected readonly bankTransfer: BankAccountParams = {
-		title: 'DONAR CON TRANSFERENCIA BANCARIA',
-		accountName: BANK_ACCOUNT.accountName,
-		bankName: BANK_ACCOUNT.bankName,
-		alias: BANK_ACCOUNT.alias,
-		checkingsAccount: BANK_ACCOUNT.checkingsAccount,
-		cbu: BANK_ACCOUNT.cbu,
-		cuit: BANK_ACCOUNT.cuit,
+	protected readonly bankTransferData: DonationInfoCardData = {
+		title: 'Doná por Transferencia',
+		iconName: 'account_balance',
+		accentColor: 'var(--bank-blue, #2a7ca5)',
+		fields: [
+			{ label: 'Nombre de la cuenta', value: BANK_ACCOUNT.accountName, isCopiable: false },
+			{ label: 'Banco', value: BANK_ACCOUNT.bankName, isCopiable: false },
+			{ label: 'Alias', value: BANK_ACCOUNT.alias, isCopiable: true },
+			{ label: 'Nº de Cuenta Corriente', value: BANK_ACCOUNT.checkingsAccount, isCopiable: true },
+			{ label: 'CBU', value: BANK_ACCOUNT.cbu, isCopiable: true },
+			{ label: 'CUIT', value: BANK_ACCOUNT.cuit, isCopiable: true },
+		],
 	};
 
 	/** Link to the donation page. */

@@ -11,13 +11,18 @@
 				Donar
 			</h1>
 		</header>
-		<p>Quiero Donar con tarjeta de crédito / débito</p>
+		<p class="donation-subtitle">Tu generosidad transforma vidas. Elegí como querés colaborar:</p>
+
+		<h2 class="section-title-minor">Con Tarjeta de Crédito / Débito</h2>
+		<p class="section-description">A través de Donar Online, una plataforma segura para colaborar con ONGs.</p>
 		<div class="donation-cards-grid">
 			@for (card of donationCards; track card.title) {
 				<a
 					class="donation-card-link"
 					[href]="donationLink"
 					target="_blank"
+					rel="noopener noreferrer"
+					[attr.aria-label]="'Donar para el programa ' + card.title"
 				>
 					<mdlc-icon-title-card
 						class="donation-card-item"
@@ -36,38 +41,12 @@
 	</div>
 </mdlc-content-layout>
 
-<mdlc-content-layout
-	class="layout-columns"
-	aria-labelledby="mercadopago-title"
->
+<mdlc-content-layout class="layout-columns donation-methods-layout">
 	<div class="content-block">
-		<mdlc-stripped-bordered-card
-			class="stripped-bordered-card"
-			[title]="mercadoPago.title"
-		>
-			<p>Alias</p>
-			<p>{{ mercadoPago.alias }}</p>
-			<p>CVU</p>
-			<p>{{ mercadoPago.cvu }}</p>
-		</mdlc-stripped-bordered-card>
-	</div>
-</mdlc-content-layout>
-
-<mdlc-content-layout
-	class="layout-columns"
-	aria-labelledby="transferencia-title"
->
-	<div class="content-block">
-		<mdlc-stripped-bordered-card
-			class="stripped-bordered-card"
-			[title]="bankTransfer.title"
-		>
-			<p>Nombre de la cuenta: {{ bankTransfer.accountName }}</p>
-			<p>Banco: {{ bankTransfer.bankName }}</p>
-			<p>Alias: {{ bankTransfer.alias }}</p>
-			<p>Cuenta corriente bancaria: {{ bankTransfer.checkingsAccount }}</p>
-			<p>CBU: {{ bankTransfer.cbu }}</p>
-			<p>CUIT {{ bankTransfer.cuit }}</p>
-		</mdlc-stripped-bordered-card>
+		<h2 class="section-title-minor">Otros Medios de Donación</h2>
+		<div class="donation-info-cards-container">
+			<mdlc-donation-info-card [cardData]="mercadoPagoData" />
+			<mdlc-donation-info-card [cardData]="bankTransferData" />
+		</div>
 	</div>
 </mdlc-content-layout>
