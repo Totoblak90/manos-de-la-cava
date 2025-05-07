@@ -1,3 +1,53 @@
 :host {
-  display: block;
+	display: block;
+}
+
+.about-us-intro .intro-text-block {
+	text-align: center;
+	margin-bottom: var(--spacing-l, 32px);
+}
+
+.intro-statement {
+	font-size: 1.5rem;
+	line-height: 1.4;
+	font-weight: bold;
+	max-width: 75ch;
+	margin-left: auto;
+	margin-right: auto;
+	color: var(--text-color);
+}
+
+.full-width-image mdlc-image-viewer {
+	--image-width: 100%;
+	--image-max-width: 100%;
+	--image-height: auto;
+	--image-object-fit: cover;
+	--image-aspect-ratio: 16 / 9;
+}
+
+.section-title {
+	margin-top: var(--section-spacing);
+}
+
+.content-block p {
+	margin-bottom: var(--spacing-m);
+	max-width: 75ch;
+}
+
+.content-block p:last-child {
+	margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+	.intro-statement {
+		font-size: 1.75rem;
+	}
+
+	.full-width-image mdlc-image-viewer {
+		--image-aspect-ratio: 21 / 9;
+	}
+
+	.content-block p {
+		max-width: 100%;
+	}
 }
