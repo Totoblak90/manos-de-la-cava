@@ -1,57 +1,93 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed } from '@angular/core';
+import { CommonModule } from '@angular/common'; // Necesario para @if, @for, etc.
 import { MatIconModule } from '@angular/material/icon';
-import { StrippedBorderedCardComponent } from '@mdlc/shared/components/cards/stripped-bordered-card/stripped-bordered-card.component';
 import {
 	ADDRESS,
 	EMAIL,
 	FACEBOOK,
 	INSTAGRAM,
 	PHONE,
+	NAME as ORG_NAME, // Importamos el nombre de la ONG si queremos usarlo
+	YOUTUBE, // Añadimos YouTube si lo tienes
 } from '@mdlc/shared/constants/institutional-info/institutional-info';
+
+interface ContactMethod {
+	label: string;
+	href: string;
+	ariaLabel: string;
+	icon?: string;
+	svgIcon?: string;
+	isExternal?: boolean;
+	detail?: string;
+}
 
 @Component({
 	selector: 'mdlc-contact',
-	imports: [MatIconModule, StrippedBorderedCardComponent],
+	standalone: true,
+	imports: [CommonModule, MatIconModule],
 	templateUrl: './contact.component.html',
 	styleUrl: './contact.component.css',
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ContactComponent {
-	/** Email address. */
-	protected readonly email = EMAIL;
+	protected readonly contactMethods = computed<ContactMethod[]>(() => [
+		{
+			icon: 'email',
+			label: EMAIL,
+			href: `mailto:${EMAIL}`,
+			ariaLabel: `Enviar un correo electrónico a ${ORG_NAME}`,
+		},
+		{
+			svgIcon: 'whatsapp',
+			label: PHONE,
+			href: this.whatsappUrl,
+			ariaLabel: `Contactar a ${ORG_NAME} por WhatsApp`,
+			isExternal: true,
+		},
+		{
+			icon: 'location_on',
+			label: this.prettifiedAddress,
+			href: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(this.prettifiedAddressForMap)}`,
+			ariaLabel: `Ver la dirección de ${ORG_NAME} en el mapa`,
+			isExternal: true,
+			detail: '¡Visitanos cuando quieras!',
+		},
+		{
+			svgIcon: 'instagram',
+			label: '@manosdelacava',
+			href: INSTAGRAM,
+			ariaLabel: `Seguir a ${ORG_NAME} en Instagram`,
+			isExternal: true,
+		},
+		{
+			svgIcon: 'facebook',
+			label: '/ManosDeLaCava',
+			href: FACEBOOK,
+			ariaLabel: `Seguir a ${ORG_NAME} en Facebook`,
+			isExternal: true,
+		},
+		{
+			svgIcon: 'youtube',
+			label: 'Manos de La Cava en YouTube',
+			href: YOUTUBE,
+			ariaLabel: `Ver el canal de ${ORG_NAME} en YouTube`,
+			isExternal: true,
+		},
+	]);
 
-	/** Phone number. */
-	protected readonly phone = PHONE;
-
-	/** Instagram URL. */
-	protected readonly instagramUrl = INSTAGRAM;
-
-	/** Facebook URL. */
-	protected readonly facebookUrl = FACEBOOK;
-
-	protected get whatsappUrl(): string {
-		if (!this.phone) {
-			return '';
+	private get whatsappUrl(): string {
+		if (!PHONE) {
+			return '#';
 		}
-		const cleanPhone = this.phone.replace(/\D/g, '');
+		const cleanPhone = PHONE.replace(/\D/g, '');
 		return `https://wa.me/${cleanPhone}`;
 	}
 
-	/** Address. */
-	get prettifiedAddress(): string {
-		return (
-			`${ADDRESS.streetName
-			} ${
-				ADDRESS.streetNumber
-			}, ${
-				ADDRESS.city
-			}. Código Postal: ${
-				ADDRESS.postalCode
-			}, ${
-				ADDRESS.province
-			}, ${
-				ADDRESS.country
-			}.`
-		);
+	private get prettifiedAddress(): string {
+		return `${ADDRESS.streetName} ${ADDRESS.streetNumber}, ${ADDRESS.city}, ${ADDRESS.province}. CP: ${ADDRESS.postalCode}. ${ADDRESS.country}.`;
+	}
+
+	private get prettifiedAddressForMap(): string {
+		return `${ADDRESS.streetName} ${ADDRESS.streetNumber}, ${ADDRESS.city}, ${ADDRESS.province}, ${ADDRESS.postalCode}, ${ADDRESS.country}`;
 	}
 }

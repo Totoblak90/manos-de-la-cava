@@ -1,61 +1,36 @@
-<mdlc-stripped-bordered-card class="stripped-bordered-card" title="Contacto">
-	<section class="contact-info">
-		<p>
-			<span>
-				<mat-icon>email</mat-icon>
-				:
-			</span>
-			<a [href]="'mailto:' + email">{{ email }}</a>
-		</p>
+<section class="contact-section-container">
+	<h2 class="section-title">Contacto</h2>
+	<p class="contact-intro">
+		¡Nos encantaría saber de vos! Si tenés preguntas, querés colaborar o simplemente saber más sobre nuestro trabajo, no
+		dudes en contactarnos a través de estos canales:
+	</p>
 
-		<p>
-			<span>
-				<mat-icon svgIcon="whatsapp" />
-				:
-			</span>
+	<div class="contact-methods-grid">
+		@for (method of contactMethods(); track method.label) {
 			<a
-				[href]="whatsappUrl"
-				target="_blank"
-				rel="noopener noreferrer"
+				class="contact-method-item"
+				[href]="method.href"
+				[target]="method.isExternal ? '_blank' : '_self'"
+				[rel]="method.isExternal ? 'noopener noreferrer' : null"
+				[attr.aria-label]="method.ariaLabel"
 			>
-				{{ phone }}
+				<div class="icon-wrapper">
+					@if (method.svgIcon) {
+						<mat-icon [svgIcon]="method.svgIcon"></mat-icon>
+					} @else {
+						<mat-icon>{{ method.icon }}</mat-icon>
+					}
+				</div>
+				<div class="text-wrapper">
+					<span class="contact-label">{{ method.label }}</span>
+					@if (method.detail) {
+						<span class="contact-detail">{{ method.detail }}</span>
+					}
+				</div>
+				@if (method.isExternal) {
+					<mat-icon class="external-link-icon">open_in_new</mat-icon>
+				}
 			</a>
-		</p>
-
-		<p>
-			<span>
-				<mat-icon>home</mat-icon>
-				:
-			</span>
-			<span>{{ prettifiedAddress }}</span>
-		</p>
-
-		<p>
-			<span>
-				<mat-icon svgIcon="instagram" />
-				:
-			</span>
-
-			<a
-				[href]="instagramUrl"
-				target="_blank"
-			>
-				{{ "@manosdelacava" }}
-			</a>
-		</p>
-
-		<p>
-			<span>
-				<mat-icon svgIcon="facebook" />
-				:
-			</span>
-
-			<a
-				[href]="facebookUrl"
-				target="_blank"
-			>
-				/ManosDeLaCava
-			</a>
-		</p>
-	</section>
-</mdlc-stripped-bordered-card>
+		}
+	</div>
+</section>
