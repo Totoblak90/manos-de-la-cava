@@ -1,8 +1,11 @@
 <section class="card-image-section">
-	<img
-		class="card-image-section__image"
-		[src]="imageParams().imgUrl"
-		[alt]="imageParams().imgAlt"
+	<mdlc-image-viewer
+		class="card-image-section__image-viewer"
+		[imageUrl]="imageParams().imgUrl"
+		[altText]="imageParams().imgAlt"
+		[lazyLoad]="true"
+		[width]="null"
+		[height]="null"
 	/>
 </section>
 
